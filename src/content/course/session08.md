@@ -141,45 +141,55 @@ Sobreescribe `align-items` para un flex item concreto.
 .item-especial { align-self: flex-end; }
 ```
 
-### 11. Centrado perfecto con Flexbox
+### 11. Ejemplo Completo: Pokédex
 
-```css
-.contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+```html
+<header>
+  <img src="054.png" alt="best pokemon ever" />
+  <h1>pokedex</h1>
+  <div class="cachito">
+    <h2>Catch 'em all</h2>
+    <h3>pokemon</h3>
+  </div>
+</header>
+<main>
+  <section class="pokedex">
+    <div class="card pokemon"><!-- pokemon --></div>
+    <div class="card pokemon superrebelde"><!-- Psyduck --></div>
+  </section>
+</main>
 ```
 
-### 12. Ejemplo Completo: Layout de Página
-
 ```css
-/* Layout principal */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main { flex: 1; } /* ocupa todo el espacio disponible */
-
-/* Header con logo y nav */
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: space-between;
+  padding-inline: 2em;
 }
 
-/* Cards en grid flexible */
-.cards {
+.cachito {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card {
-  flex: 1 1 300px; /* grow shrink basis */
+section.pokedex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.pokedex > .pokemon {
+  width: 177px;
+  padding: 0.5em;
+  order: 40;
+}
+
+.pokemon.superrebelde {
+  order: 35; /* Psyduck aparece antes que los demás */
 }
 ```
