@@ -1,0 +1,31 @@
+---
+import DocsLayout from '../../layouts/DocsLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('course');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+
+const sections: Record<string, typeof sorted> = {};
+for (const e of sorted) {
+  if (!sections[e.data.section]) sections[e.data.section] = [];
+  sections[e.data.section].push(e);
+}
+---
+<DocsLayout title="Índice del Curso">
+  <div class="prose dark:prose-invert max-w-none">
+    <h1>Índice del Curso</h1>
+    {Object.entries(sections).map(([section, items]) => (
+      <div>
+        <h2>{section}</h2>
+        <ul>
+          {items.map(item => (
+            <li>
+              <a href={`/course/${item.slug}`}>{item.data.title}</a>
+              {item.data.description && <span class="text-gray-500"> — {item.data.description}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</DocsLayout>

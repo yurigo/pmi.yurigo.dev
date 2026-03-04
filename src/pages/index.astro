@@ -1,0 +1,23 @@
+---
+import DocsLayout from '../layouts/DocsLayout.astro';
+import { getCollection } from 'astro:content';
+
+const entries = await getCollection('course');
+const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+---
+<DocsLayout title="Inicio">
+  <div class="prose dark:prose-invert max-w-none">
+    <h1>Programación de Medios Interactivos</h1>
+    <p class="lead">Bienvenido al sitio de documentación del curso PMI. Aquí encontrarás los apuntes y materiales de cada sesión.</p>
+    <p>Este curso cubre los fundamentos del desarrollo web moderno: HTML, CSS y JavaScript.</p>
+    <div class="not-prose mt-8 grid gap-4 sm:grid-cols-2">
+      {sorted.map(entry => (
+        <a href={`/course/${entry.slug}`} class="block p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
+          <div class="text-xs font-medium text-indigo-600 dark:text-indigo-400 uppercase mb-1">{entry.data.section}</div>
+          <div class="font-semibold text-gray-900 dark:text-gray-100">{entry.data.title}</div>
+          {entry.data.description && <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">{entry.data.description}</div>}
+        </a>
+      ))}
+    </div>
+  </div>
+</DocsLayout>
