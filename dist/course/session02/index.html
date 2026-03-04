@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="es" class="scroll-smooth"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sesión 02 - HTML Avanzado | PMI</title><script>
+      if (localStorage.getItem('theme') === 'dark' ||
+          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script><link rel="stylesheet" href="/_astro/_slug_.Cj9wdOgM.css"></head> <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen"> <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center justify-between"> <div class="flex items-center gap-3"> <button id="sidebar-toggle" class="md:hidden p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Toggle sidebar"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> <a href="/" class="font-bold text-lg text-indigo-600 dark:text-indigo-400 hover:text-indigo-700">PMI</a> <span class="text-gray-500 dark:text-gray-400 text-sm hidden sm:inline">Programación de Medios Interactivos</span> </div> <div class="flex items-center gap-3"> <a href="https://github.com/yurigo/pmi-2526" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200" aria-label="GitHub"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12C24 5.37 18.63 0 12 0z"></path> </svg> </a> <button id="theme-toggle" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Toggle dark mode"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.36-6.36l-.71.71M6.34 17.66l-.71.71m12.73 0l-.71-.71M6.34 6.34l-.71-.71M12 8a4 4 0 100 8 4 4 0 000-8z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"></path> </svg> </button> </div> </header> <script type="module">const t=document.getElementById("theme-toggle");t?.addEventListener("click",()=>{const e=document.documentElement.classList.toggle("dark");localStorage.setItem("theme",e?"dark":"light")});const d=document.getElementById("sidebar-toggle"),n=document.getElementById("sidebar");d?.addEventListener("click",()=>{n?.classList.toggle("hidden")});</script> <div class="flex"> <aside id="sidebar" class="hidden md:block w-64 shrink-0 border-r border-gray-200 dark:border-gray-700 min-h-[calc(100vh-57px)] px-4 py-6 sticky top-14 overflow-y-auto max-h-[calc(100vh-57px)]"> <nav> <a href="/course" class="block mb-4 text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:text-indigo-600">
+Índice del Curso
+</a> <div class="mb-6"> <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">HTML</h3> <ul class="space-y-1"> <li> <a href="/course/session01" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 01 - Introducción a Web </a> </li><li> <a href="/course/session02" class="block px-2 py-1 rounded text-sm transition-colors bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 font-medium"> Sesión 02 - HTML Avanzado </a> </li><li> <a href="/course/session03" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 03 - HTML5 Semántico </a> </li><li> <a href="/course/session05" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 05 - Formularios HTML </a> </li> </ul> </div><div class="mb-6"> <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">CSS</h3> <ul class="space-y-1"> <li> <a href="/course/session04" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 04 - Introducción a CSS </a> </li><li> <a href="/course/session06" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 06 - CSS Box Model y Reset CSS </a> </li><li> <a href="/course/session07" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 07 - CSS: border-radius, box-shadow y height </a> </li><li> <a href="/course/session08" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 08 - CSS Flexbox </a> </li><li> <a href="/course/session09" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 09 - Actividad de Maquetación con Flexbox </a> </li><li> <a href="/course/session10" class="block px-2 py-1 rounded text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"> Sesión 10 - Corrección de la Actividad MWC </a> </li> </ul> </div> </nav> </aside> <main class="flex-1 min-w-0 px-6 py-8 max-w-4xl mx-auto">  <article class="prose dark:prose-invert max-w-none"> <h1 id="sesión-02---html-avanzado">Sesión 02 - HTML Avanzado</h1>
+<p><strong>Fecha:</strong> 05/02/2026</p>
+<h2 id="contenidos-de-la-sesión">Contenidos de la Sesión</h2>
+<h3 id="1-imágenes-en-html">1. Imágenes en HTML</h3>
+<p>La etiqueta <code>&#x3C;img></code> es un elemento auto-cerrado que se utiliza para incrustar imágenes.</p>
+<p><strong>Atributos principales:</strong></p>
+<ul>
+<li><strong><code>src</code></strong>: Especifica la ruta o URL de la imagen.</li>
+<li><strong><code>alt</code></strong>: Texto alternativo para accesibilidad y SEO.</li>
+<li><strong><code>width</code> y <code>height</code></strong>: Dimensiones de la imagen.</li>
+<li><strong><code>title</code></strong>: Texto tooltip al pasar el cursor.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">img</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"./img/psyduck.png"</span><span style="color:#B392F0"> alt</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Psyduck Pokemon"</span><span style="color:#B392F0"> height</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"40px"</span><span style="color:#E1E4E8"> /></span></span></code></pre>
+<h3 id="2-listas-en-html">2. Listas en HTML</h3>
+<h4 id="listas-desordenadas-ul">Listas Desordenadas (<code>&#x3C;ul></code>)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"square"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>Java&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>JavaScript&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>Python&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h4 id="listas-ordenadas-ol">Listas Ordenadas (<code>&#x3C;ol></code>)</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">ol</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"i"</span><span style="color:#B392F0"> start</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"10"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>Elemento 10&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>Elemento 11&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">ol</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p><strong>Atributos de <code>&#x3C;ol></code>:</strong></p>
+<ul>
+<li><code>type="1"</code>: Números (por defecto)</li>
+<li><code>type="A"</code>: Letras mayúsculas</li>
+<li><code>type="a"</code>: Letras minúsculas</li>
+<li><code>type="I"</code>: Números romanos mayúsculas</li>
+<li><code>start</code>: Número de inicio</li>
+</ul>
+<h4 id="listas-anidadas">Listas Anidadas</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>Java&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>C&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>C++&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>C#&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">>Python&#x3C;/</span><span style="color:#85E89D">li</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">ul</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="3-tablas-en-html">3. Tablas en HTML</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Encabezado 1&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Encabezado 2&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">thead</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">td</span><span style="color:#E1E4E8">>Dato 1&#x3C;/</span><span style="color:#85E89D">td</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">td</span><span style="color:#E1E4E8">>Dato 2&#x3C;/</span><span style="color:#85E89D">td</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p><strong>Atributos útiles:</strong></p>
+<ul>
+<li><strong><code>rowspan</code></strong>: Fusiona celdas verticalmente.</li>
+<li><strong><code>colspan</code></strong>: Fusiona celdas horizontalmente.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Castellano&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">td</span><span style="color:#B392F0"> rowspan</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span><span style="color:#E1E4E8">>&#x3C;</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>nativo&#x3C;/</span><span style="color:#85E89D">strong</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">td</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">>Catalán&#x3C;/</span><span style="color:#85E89D">th</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">tr</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">tbody</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">table</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="4-contenedores-div-y-span">4. Contenedores: <code>&#x3C;div></code> y <code>&#x3C;span></code></h3>
+<h4 id="el-elemento-div">El elemento <code>&#x3C;div></code></h4>
+<ul>
+<li>Elemento de bloque (comienza en una nueva línea)</li>
+<li>Ocupa todo el ancho disponible</li>
+<li>Ideal para agrupar y aplicar estilos CSS</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">>Título de sección&#x3C;/</span><span style="color:#85E89D">h2</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Contenido de la sección&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h4 id="el-elemento-span">El elemento <code>&#x3C;span></code></h4>
+<ul>
+<li>Elemento en línea (no comienza en una nueva línea)</li>
+<li>Ocupa solo el espacio necesario</li>
+<li>Para estilizar partes de texto dentro de un párrafo</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">>Lorem ipsum &#x3C;</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">>dolor&#x3C;/</span><span style="color:#85E89D">span</span><span style="color:#E1E4E8">> sit amet&#x3C;/</span><span style="color:#85E89D">p</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="5-enlaces-y-atributos">5. Enlaces y Atributos</h3>
+<p><strong>Atributo <code>target</code>:</strong></p>
+<ul>
+<li><strong><code>target="_blank"</code></strong>: Abre en una nueva pestaña</li>
+<li><strong><code>target="_self"</code></strong>: Abre en la misma ventana (por defecto)</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://instagram.com/usuario"</span><span style="color:#B392F0"> target</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"_blank"</span><span style="color:#E1E4E8">>Ver mi Instagram&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p><strong>Buenas prácticas:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://example.com"</span><span style="color:#B392F0"> target</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"_blank"</span><span style="color:#B392F0"> rel</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"noopener noreferrer"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  Enlace externo seguro</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h4 id="enlaces-internos">Enlaces Internos</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"./proyecto1.html"</span><span style="color:#E1E4E8">>Ir a ver el proyecto&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">a</span><span style="color:#B392F0"> href</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"./index.html"</span><span style="color:#E1E4E8">>Volver a la página principal&#x3C;/</span><span style="color:#85E89D">a</span><span style="color:#E1E4E8">></span></span></code></pre>
+<h3 id="6-elementos-multimedia-audio-y-video">6. Elementos Multimedia (Audio y Video)</h3>
+<h4 id="video">Video</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">video</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"./img/video.mp4"</span><span style="color:#B392F0"> autoplay</span><span style="color:#B392F0"> muted</span><span style="color:#B392F0"> loop</span><span style="color:#B392F0"> controls</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">video</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p><strong>Atributos:</strong></p>
+<ul>
+<li><code>controls</code>: Muestra controles de reproducción</li>
+<li><code>autoplay</code>: Reproduce automáticamente al cargar</li>
+<li><code>muted</code>: Silencia el audio</li>
+<li><code>loop</code>: Reproduce en bucle</li>
+</ul>
+<h4 id="audio">Audio</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">audio</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"./img/audio.ogv"</span><span style="color:#B392F0"> controls</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">audio</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p><strong>Formatos soportados:</strong></p>
+<ul>
+<li>Video: MP4, WebM, Ogg</li>
+<li>Audio: MP3, WAV, Ogg</li>
+</ul> </article>  <nav class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-between gap-4"> <a href="/course/session01" class="flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 hover:underline"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path> </svg> Sesión 01 - Introducción a Web </a> <a href="/course/session03" class="flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 hover:underline ml-auto"> Sesión 03 - HTML5 Semántico <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path> </svg> </a> </nav> </main> </div> </body></html>

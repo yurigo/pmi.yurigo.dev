@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from 'astro:content';
+import DocsLayout from '../../layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('course');
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<DocsLayout title={entry.data.title} entry={entry}>
+  <article class="prose dark:prose-invert max-w-none">
+    <Content />
+  </article>
+</DocsLayout>
