@@ -188,17 +188,6 @@ Pie de página del documento o de una sección.
 </footer>
 ```
 
-#### `<figure>` y `<figcaption>`
-
-Para imágenes con descripción.
-
-```html
-<figure>
-  <img src="./img/foto.jpg" alt="Descripción de la foto" />
-  <figcaption>Pie de foto descriptivo</figcaption>
-</figure>
-```
-
 ### 4. Estructura Completa con Semántica HTML5
 
 ```html

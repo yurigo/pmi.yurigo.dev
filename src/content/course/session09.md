@@ -94,7 +94,6 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
 button:hover {
@@ -162,10 +161,8 @@ header nav ul {
 .column { flex: 1; }
 ```
 
-### 8. Consejos de Maquetación
+### 8. Ejemplo desarrollado en clase: MWC
 
-- ✅ Usa `flex-basis` en lugar de `width` fija para layouts flexibles
-- ✅ Combina `flex-basis` + `flex-grow` para tarjetas adaptables
-- ✅ Usa `gap` en lugar de `margin` en flex items
-- ✅ Añade `transition` para efectos `:hover` suaves
-- ✅ Usa `flex-wrap: wrap` para que las cards pasen a la siguiente línea en móviles
+En clase se desarrolló el HTML completo del ejemplo `mwc/` (Mobile World Congress) para ilustrar la estructura de la actividad. El resto del CSS se dejó como práctica para completar en casa.
+
+> **Bonus opcional:** Combina `:hover` con `transition` para crear efectos de cambio suaves.

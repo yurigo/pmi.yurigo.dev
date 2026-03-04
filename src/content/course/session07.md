@@ -178,34 +178,46 @@ Resuelve el problema de las barras de dirección en móviles que aparecen/desapa
 }
 ```
 
-### 5. Transiciones CSS
+### 5. `cursor` — Control del Cursor del Ratón
 
 ```css
-.elemento {
-  background-color: blue;
-  transition: background-color 0.3s ease;
-  /* transition: propiedad duración timing-function delay */
-}
-
-.elemento:hover {
-  background-color: red;
+selector {
+  cursor: tipo-de-cursor;
 }
 ```
 
-**Timing functions:**
-- `ease` (por defecto): lento al inicio, rápido en el medio, lento al final
-- `linear`: velocidad constante
-- `ease-in`: lento al inicio
-- `ease-out`: lento al final
-- `ease-in-out`: lento al inicio y al final
+**Valores más comunes:**
+
+| Valor | Descripción |
+| --- | --- |
+| `default` | Cursor por defecto (flecha) |
+| `pointer` | Mano con dedo índice (elemento clickable) |
+| `text` | Cursor de texto (I-beam) |
+| `crosshair` | Cruz |
+| `move` | Cruz con flechas (indica que se puede mover) |
+| `grab` / `grabbing` | Mano abierta / cerrada |
+| `not-allowed` | Círculo con barra (acción no permitida) |
+| `wait` | Reloj o spinner (indica carga) |
+| `none` | Cursor invisible |
 
 ```css
-/* Transición de múltiples propiedades */
-.card {
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+button, a { cursor: pointer; }
+
+.deshabilitado {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
-.card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-4px);
+
+.arrastrable { cursor: grab; }
+.arrastrable:active { cursor: grabbing; }
+```
+
+#### Cursor personalizado con imagen
+
+```css
+.seccion-especial {
+  cursor: url("./ufo.svg") 10 10, pointer;
 }
 ```
+
+> **Importante:** Incluye siempre un cursor de fallback (`pointer`, `default`, etc.) después de la URL por si la imagen no carga.
