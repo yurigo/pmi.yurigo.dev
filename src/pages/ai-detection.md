@@ -120,4 +120,4 @@ Se recomienda una prueba controlada obligatoria y la revisión específica de la
 
 ## 🧠 Bonus: frase clave para defender la rúbrica
 
-> “La evaluación no se basa en el resultado final, sino en la coherencia entre el nivel del alumno, el proceso de desarrollo y los criterios trabajados en la asignatura.”
+> La evaluación no se basa en el resultado final, sino en la coherencia entre el nivel del alumno, el proceso de desarrollo y los criterios trabajados en la asignatura.
