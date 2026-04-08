@@ -1,3 +1,10 @@
+---
+title: "Sesión 14 - CSS Transitions, Transforms y Animations"
+section: "CSS"
+order: 14
+description: "Movimiento en CSS con transition, transform, animation y keyframes"
+---
+
 # Sesión 14 - CSS Transitions, Transforms y Animations
 
 **Fecha:** 18 de Marzo de 2026

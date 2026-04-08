@@ -1,3 +1,10 @@
+---
+title: "Sesión 16 - Git y GitHub"
+section: "Git"
+order: 16
+description: "Flujo básico con Git y GitHub: add, commit, push, ramas, PR y despliegue"
+---
+
 # Sesión 16 - Git y GitHub
 
 **Fecha:** 8 de Abril de 2026

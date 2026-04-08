@@ -1,3 +1,10 @@
+---
+title: "Sesión 12 - CSS Grid Declarativo: grid-template-areas"
+section: "CSS"
+order: 12
+description: "Grid declarativo con grid-template-areas, grid-area y media queries"
+---
+
 # Sesión 12 - CSS Grid Declarativo: `grid-template-areas`
 
 **Fecha:** 11 de Marzo de 2026

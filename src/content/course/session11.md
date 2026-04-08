@@ -1,3 +1,10 @@
+---
+title: "Sesión 11 - Introducción a CSS Grid"
+section: "CSS"
+order: 11
+description: "Fundamentos de CSS Grid: columnas, filas, gap, posicionamiento y span"
+---
+
 # Sesión 11 - Introducción a CSS Grid
 
 **Fecha:** 10 de Marzo de 2026

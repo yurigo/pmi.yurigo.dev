@@ -1,3 +1,10 @@
+---
+title: "Sesión 15 - Responsividad en Diseño Web"
+section: "CSS"
+order: 15
+description: "Diseño responsive con media queries, breakpoints y enfoque mobile first"
+---
+
 # Sesión 15 - Responsividad en Diseño Web
 
 **Fecha:** 7 de Abril de 2026

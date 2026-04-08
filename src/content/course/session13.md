@@ -1,3 +1,10 @@
+---
+title: "Sesión 13 - CSS Positioning"
+section: "CSS"
+order: 13
+description: "Position en CSS: relative, absolute, fixed, sticky, z-index e inset"
+---
+
 # Sesión 13 - CSS Positioning
 
 **Fecha:** 17 de Marzo de 2026
