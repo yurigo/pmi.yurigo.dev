@@ -121,8 +121,8 @@ section {
 
 ```css
 .contenedor {
-  gap: 1em;          /* mismo espacio en filas y columnas */
-  gap: 1em 2em;      /* row-gap: 1em, column-gap: 2em */
+  gap: 1em; /* mismo espacio en filas y columnas */
+  gap: 1em 2em; /* row-gap: 1em, column-gap: 2em */
   row-gap: 1em;
   column-gap: 2em;
 }
@@ -136,18 +136,18 @@ section {
 
 ```css
 .contenedor {
-  place-items: center;         /* centra en ambos ejes */
-  place-items: stretch;        /* estira para ocupar toda la celda (valor por defecto) */
-  place-items: start end;      /* align-items: start, justify-items: end */
+  place-items: center; /* centra en ambos ejes */
+  place-items: stretch; /* estira para ocupar toda la celda (valor por defecto) */
+  place-items: start end; /* align-items: start, justify-items: end */
 }
 ```
 
-| Valor      | Descripción                                             |
-| ---------- | ------------------------------------------------------- |
-| `stretch`  | El item ocupa toda la celda (valor por defecto)         |
-| `start`    | El item se alinea al inicio de la celda                 |
-| `end`      | El item se alinea al final de la celda                  |
-| `center`   | El item se centra en la celda                           |
+| Valor     | Descripción                                     |
+| --------- | ----------------------------------------------- |
+| `stretch` | El item ocupa toda la celda (valor por defecto) |
+| `start`   | El item se alinea al inicio de la celda         |
+| `end`     | El item se alinea al final de la celda          |
+| `center`  | El item se centra en la celda                   |
 
 ---
 
@@ -288,8 +288,8 @@ El archivo [`pagina2.html`](./grid-examples/pagina2.html) muestra cómo usar Gri
 body {
   height: 100vh;
   display: grid;
-  grid-template-columns: 6fr 1fr;      /* main ocupa 6 partes, aside 1 parte */
-  grid-template-rows: 60px 1fr 60px;   /* header, contenido, footer */
+  grid-template-columns: 6fr 1fr; /* main ocupa 6 partes, aside 1 parte */
+  grid-template-rows: 60px 1fr 60px; /* header, contenido, footer */
 }
 
 header {
@@ -350,6 +350,7 @@ En esta sesión hemos introducido:
 **Lo más importante:**
 
 > [!IMPORTANT]
+>
 > - Los números de línea en Grid empiezan en **1**, y el valor **-1** representa la última línea
 > - La unidad `fr` reparte el espacio disponible de forma proporcional, como `flex-grow`
 > - `span N` indica cuántas columnas/filas abarca el item, sin necesidad de conocer la línea de fin
