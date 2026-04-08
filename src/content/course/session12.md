@@ -1,3 +1,10 @@
+---
+title: "Sesión 12 - CSS Grid Declarativo: grid-template-areas"
+section: "CSS"
+order: 12
+description: "Enfoque declarativo de CSS Grid con grid-template-areas y grid-area"
+---
+
 # Sesión 12 - CSS Grid Declarativo: `grid-template-areas`
 
 **Fecha:** 11 de Marzo de 2026
@@ -175,8 +182,6 @@ grid-example-continuacion/
 Una vez vista la teoría, se ha propuesto la siguiente actividad práctica:
 
 Realiza el maquetado de la siguiente página usando `grid-template-areas`:
-
-![actividad maquetado](actividad-maquetado.png)
 
 **Indicaciones:**
 - Usa `grid-template-areas` para definir el layout.

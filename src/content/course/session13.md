@@ -1,3 +1,10 @@
+---
+title: "Sesión 13 - CSS Positioning"
+section: "CSS"
+order: 13
+description: "Posicionamiento CSS: static, relative, absolute, fixed y sticky"
+---
+
 # Sesión 13 - CSS Positioning
 
 **Fecha:** 17 de Marzo de 2026

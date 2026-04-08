@@ -1,3 +1,10 @@
+---
+title: "Sesión 15 - Responsividad en Diseño Web"
+section: "CSS"
+order: 15
+description: "Diseño web responsivo: media queries, mobile-first y desktop-first"
+---
+
 # Sesión 15 - Responsividad en Diseño Web
 
 **Fecha:** 7 de Abril de 2026

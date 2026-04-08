@@ -1,3 +1,10 @@
+---
+title: "Sesión 16 - Git y GitHub"
+section: "Git"
+order: 16
+description: "Control de versiones con Git y colaboración en GitHub"
+---
+
 # Sesión 16 - Git y GitHub
 
 **Fecha:** 8 de Abril de 2026
