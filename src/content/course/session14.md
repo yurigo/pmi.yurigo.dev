@@ -2,7 +2,7 @@
 title: "Sesión 14 - CSS Transitions, Transforms y Animations"
 section: "CSS"
 order: 14
-description: "Movimiento en CSS con transition, transform, animation y keyframes"
+description: "Animaciones y transformaciones en CSS"
 ---
 
 # Sesión 14 - CSS Transitions, Transforms y Animations

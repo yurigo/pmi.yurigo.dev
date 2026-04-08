@@ -2,7 +2,7 @@
 title: "Sesión 13 - CSS Positioning"
 section: "CSS"
 order: 13
-description: "Position en CSS: relative, absolute, fixed, sticky, z-index e inset"
+description: "Posicionamiento CSS: static, relative, absolute, fixed y sticky"
 ---
 
 # Sesión 13 - CSS Positioning

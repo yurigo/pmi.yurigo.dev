@@ -2,7 +2,7 @@
 title: "Sesión 12 - CSS Grid Declarativo: grid-template-areas"
 section: "CSS"
 order: 12
-description: "Grid declarativo con grid-template-areas, grid-area y media queries"
+description: "Enfoque declarativo de CSS Grid con grid-template-areas y grid-area"
 ---
 
 # Sesión 12 - CSS Grid Declarativo: `grid-template-areas`

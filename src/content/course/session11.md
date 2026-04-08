@@ -2,7 +2,7 @@
 title: "Sesión 11 - Introducción a CSS Grid"
 section: "CSS"
 order: 11
-description: "Fundamentos de CSS Grid: columnas, filas, gap, posicionamiento y span"
+description: "Sistema de maquetación bidimensional con CSS Grid Layout"
 ---
 
 # Sesión 11 - Introducción a CSS Grid
