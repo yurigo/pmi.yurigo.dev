@@ -295,14 +295,15 @@ button {
 
 #### Example-1
 
-<iframe src="/examples/session10/example-1/from/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
-<iframe src="/examples/session10/example-1/to/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
-
 Versión original entregada por un alumno (`from`) y código mejorado en clase (`to`).
 
-<iframe src="/examples/session10/example-2/from/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
+##### from
 
-<iframe src="/examples/session10/example-2/to/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
+<iframe src="/examples/session10/example-1/from/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
+
+##### to
+
+<iframe src="/examples/session10/example-1/to/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
 
 ```
 example-1/
@@ -328,6 +329,14 @@ Principales mejoras introducidas:
 - Botón con `align-self: flex-end`
 
 #### Example-2
+
+##### from
+
+<iframe src="/examples/session10/example-2/from/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
+
+##### to
+
+<iframe src="/examples/session10/example-2/to/index.html" title="Ejemplo Sesión 10 - CSS Flexbox" class="course-iframe"></iframe>
 
 ```
 example-2/
