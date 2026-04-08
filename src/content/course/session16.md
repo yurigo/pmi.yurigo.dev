@@ -31,10 +31,10 @@ El ejemplo construido en clase se encuentra en la carpeta [`example/`](./example
 
 Cuando trabajamos con Git y GitHub existen dos árboles (o árboles de commits):
 
-| Concepto       | Descripción                                                                 |
-| -------------- | --------------------------------------------------------------------------- |
-| **Local tree** | El historial de commits en tu máquina. Solo tú lo ves.                      |
-| **Remote tree** | El historial de commits en GitHub. Lo puede ver (y clonar) cualquiera.     |
+| Concepto        | Descripción                                                            |
+| --------------- | ---------------------------------------------------------------------- |
+| **Local tree**  | El historial de commits en tu máquina. Solo tú lo ves.                 |
+| **Remote tree** | El historial de commits en GitHub. Lo puede ver (y clonar) cualquiera. |
 
 Los dos árboles se sincronizan con `git push` (local → remoto) y `git pull` (remoto → local).
 
@@ -92,12 +92,12 @@ git pull                         # Descarga y fusiona los cambios del remoto en 
 
 VSCode incluye integración con Git en el panel **Source Control** (icono de bifurcación en la barra lateral, o `Ctrl+Shift+G`):
 
-| Acción terminal         | Equivalente en VSCode UI                          |
-| ----------------------- | ------------------------------------------------- |
-| `git add .`             | Hacer clic en **+** junto a cada archivo o en "Stage All Changes" |
-| `git commit -m "msg"`   | Escribir el mensaje en el campo de texto y pulsar **✓ Commit** |
-| `git push`              | Pulsar el botón **Sync Changes** o el icono **↑** |
-| `git pull`              | Pulsar el botón **Sync Changes** o el icono **↓** |
+| Acción terminal       | Equivalente en VSCode UI                                          |
+| --------------------- | ----------------------------------------------------------------- |
+| `git add .`           | Hacer clic en **+** junto a cada archivo o en "Stage All Changes" |
+| `git commit -m "msg"` | Escribir el mensaje en el campo de texto y pulsar **✓ Commit**    |
+| `git push`            | Pulsar el botón **Sync Changes** o el icono **↑**                 |
+| `git pull`            | Pulsar el botón **Sync Changes** o el icono **↓**                 |
 
 ---
 
@@ -181,11 +181,11 @@ Un **Pull Request (PR)** es la forma de proponer la fusión de una rama en GitHu
 
 #### CI/CD con Vercel
 
-| Evento                          | Acción de Vercel                                    |
-| ------------------------------- | --------------------------------------------------- |
-| Push a `master`                 | Despliega en producción (URL pública)               |
-| Push a `develop` u otra rama    | Crea un despliegue de previsualización (preview URL) |
-| Pull Request abierto            | Genera una URL de previsualización automáticamente  |
+| Evento                       | Acción de Vercel                                     |
+| ---------------------------- | ---------------------------------------------------- |
+| Push a `master`              | Despliega en producción (URL pública)                |
+| Push a `develop` u otra rama | Crea un despliegue de previsualización (preview URL) |
+| Pull Request abierto         | Genera una URL de previsualización automáticamente   |
 
 > [!TIP]
 > Trabaja siempre en `develop` y fusiona a `master` solo cuando el código esté listo. Así el despliegue en producción siempre refleja código revisado y estable.
@@ -234,6 +234,7 @@ En esta sesión hemos aprendido:
 **Lo más importante:**
 
 > [!IMPORTANT]
+>
 > - Nunca trabajes directamente en `master` — usa `develop` para los cambios
 > - Escribe mensajes de commit descriptivos: `git commit -m "feat: descripción corta"`
 > - Usa Pull Requests para revisar el código antes de fusionarlo en producción
