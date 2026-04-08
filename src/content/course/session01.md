@@ -188,9 +188,9 @@ Todo documento HTML sigue una estructura estándar que es reconocida por todos l
 
 ### Hello World - Curriculum Vitae
 
-<iframe src="/examples/session01/index.html" title="Ejemplo Hello World - CV" class="course-iframe"></iframe>
-
 <a href="https://github.com/yurigo/PMI-2526/tree/master/sessions/session01/examples/helloworld" target="_blank">Aquí</a> encontrarás un ejemplo práctico que implementa una página HTML básica de un currículum vitae (CV). Este ejemplo demuestra los conceptos fundamentales aprendidos en esta sesión.
+
+<iframe src="/examples/session01/index.html" title="Ejemplo Hello World - CV" class="course-iframe"></iframe>
 
 **Archivos del ejemplo:**
 
