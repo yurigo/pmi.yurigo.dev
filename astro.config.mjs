@@ -8,8 +8,9 @@ export default defineConfig({
     remarkPlugins: [remarkGithubAlerts],
     shikiConfig: {
       themes: {
-        light: "one-light",
-        dark: "one-dark-pro",
+        light: "github-light",
+        // dark: "synthwave-84",
+        dark: "github-dark",
       },
     },
   },

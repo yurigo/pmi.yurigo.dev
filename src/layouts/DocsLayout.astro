@@ -72,14 +72,20 @@ const sorted = allEntries.sort((a, b) => a.data.order - b.data.order);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   }
 
+  html .astro-code {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+  }
+
   /* Astro already renders the light theme inline; only override dark mode */
   html.dark .astro-code {
     color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
+    /* background-color: var(--shiki-dark-bg) !important; */
+    background-color: rgba(0, 0, 0, 0.2) !important;
   }
 
   html.dark .astro-code span {
     color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
+    /* background-color: var(--shiki-dark-bg) !important; */
+    /* background-color: rgba(0, 0, 0, 0.12) !important; */
   }
 </style>
