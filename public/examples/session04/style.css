@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rebeccapurple;
+  color: white;
+  font-family: "Montserrat", "Comic Sans MS", monospace;
+  font-size: 100%;
+}
+
+header {
+  font-size: 2em;
+}
+
+h1 {
+  /* line-height: 200px; */
+  font-weight: 900;
+  font-style: italic;
+  font-size: 4rem;
+}
+
+ul {
+  color: red;
+}
+
+.guay {
+  background-color: salmon;
+}
+
+li {
+  background-color: yellowgreen;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+section {
+  /* border-width: 10px;
+        border-style: solid;
+        border-color: black; */
+
+  border: 5px solid black;
+}
+
+/* selector multiple */
+h1,
+h2,
+h3,
+.guay,
+h4,
+h4,
+h6 {
+  background-color: blue;
+}
+
+#superEspecifico {
+  background-color: red;
+}
+
+/* nested selector */
+header h2 {
+  background-color: brown;
+}
+
+/* nested parent - child selector */
+header > h2 {
+  background-color: yellow;
+}
+
+strong {
+  font-size: 1.5rem;
+  color: grey;
+}

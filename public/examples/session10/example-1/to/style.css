@@ -1,0 +1,234 @@
+:root {
+  --color-primario: rgba(44, 44, 45, 0.252);
+  --color-de-fondo: rgb(243, 243, 243);
+}
+
+body {
+  font-family: Figtree, monospace;
+  background-color: var(--color-de-fondo);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-primario);
+  /* background-color: goldenrod; */
+  backdrop-filter: blur(25px);
+}
+
+main {
+  margin-block: 100px;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  color: white;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+h2 {
+  background-color: var(--color-primario);
+  text-align: center;
+  padding: 1rem 0;
+  margin: 0;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+}
+
+.hero > * {
+  /* flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%; */
+
+  flex: 1 1 50%;
+}
+
+.herotext {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+button {
+  background-color: var(--color-primario);
+  border: 1px solid blue;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white;
+
+  align-self: flex-end;
+}
+
+/* .herotext > * {
+  margin-top: 1.5rem;
+} */
+
+.heroimg {
+}
+
+.heroimg img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.speakers {
+  padding: 0;
+}
+
+.speakers h2 {
+  margin-bottom: 2rem;
+}
+
+.gente {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.gente > div {
+  border: 1px solid grey;
+  border-radius: 6px;
+  /* padding: 1rem; */
+
+  background-color: white;
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.gente > div:nth-child(1),
+.gente > div:nth-child(2) {
+  border: 2px solid gold;
+  background-color: rgb(251, 248, 225);
+  outline: 4px dashed gold;
+  outline-offset: 5px;
+  box-shadow: 0 0 30px -5px gold;
+}
+
+tr:nth-child(2n) {
+  background-color: rgb(219, 219, 219);
+}
+
+.gente .content {
+  padding: 1rem;
+}
+
+.gente .content > * {
+  margin-top: 0.5rem;
+}
+
+.gente img {
+  width: 100%;
+  height: 234px;
+  /* object-fit: cover; */
+  object-fit: cover;
+  object-position: top;
+  /* border-radius: 5px 5px 0 0; */
+}
+
+.horario {
+  margin-top: 3rem;
+  /* background-color: white; */
+  /* padding-top: 3rem; */
+}
+
+.tabla-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+th {
+  font-weight: bold;
+  width: 20%;
+  /* background-color: #ddd; */
+}
+
+.footer {
+  display: flex;
+  gap: 1em;
+  /* justify-content: space-around; */
+  padding: 3rem;
+}
+
+.footer > * {
+  flex-grow: 1;
+  flex-basis: 33%;
+}
+
+.footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer h4 {
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  /* text-decoration: underline; */
+  border-bottom: 5px solid rgba(0, 0, 0, 0.199);
+}
+
+.redes {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.redes span {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+footer a {
+  color: rgba(0, 0, 0, 0.317);
+}

@@ -1,0 +1,28 @@
+form {
+  /* background-color: salmon; */
+  /* how to center a div */
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+form > * {
+  display: block;
+}
+
+form > input {
+  width: 95%;
+}
+
+form > textarea {
+  width: 95%;
+  height: 100px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}

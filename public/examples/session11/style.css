@@ -1,0 +1,107 @@
+:root {
+  --font-color: rgb(53, 9, 75);
+}
+
+body {
+  font-family: monospace;
+  background-color: hotpink;
+  color: var(--font-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+
+  background: #e8339a;
+  background: linear-gradient(
+    22deg,
+    rgba(232, 51, 154, 1) 0%,
+    rgba(114, 237, 83, 1) 100%
+  );
+
+  border-bottom: 0.1px solid rgb(172, 7, 68);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.281);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+/* 
+   lo de arriba ya lo sabeis,
+   podeis hacer lo que querais 
+*/
+
+section {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr 3fr) 0.5fr 1fr;
+  /* grid-template-rows: 100px 300px; */
+  grid-auto-rows: 200px;
+  /* justify-items: center;
+  align-items: center; */
+
+  place-items: strech;
+
+  gap: 1em;
+}
+
+.card {
+  border: 3px solid var(--font-color);
+  padding: 1em;
+}
+
+section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.card.important {
+  background-color: rgba(114, 237, 83, 1);
+
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 3;
+}
+
+.card.el-ultimo {
+  background-color: aqua;
+
+  /*esto:*/
+  /* grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: -1;
+  grid-row-end: 2;
+  */
+
+  /*es lo mismo que esto:*/
+  /* grid-column: 1/-1;
+  grid-row: 1/2; */
+
+  /*que es lo mismo que esto:*/
+  grid-area: 1/1/2/-1;
+}
+
+.card.este {
+  background-color: blueviolet;
+
+  /* grid-column-start: 4;
+  grid-column-end: span 2; */
+
+  grid-column: 4 / span 2;
+}

@@ -1,0 +1,168 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: rgb(71, 71, 165);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 2em 7em;
+}
+
+header > img {
+  width: 500px;
+}
+
+header > nav > ul {
+  display: flex;
+  list-style: none;
+  gap: 2em;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+section > h2,
+footer > h2 {
+  background-color: rgb(237, 237, 237);
+  border: 1px solid rgb(208, 208, 208);
+  text-align: center;
+  padding-block: 0.5em;
+  font-size: 1rem;
+  color: rgb(72, 72, 72);
+  text-transform: uppercase;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center; 
+  /* Lo ponemos aquí ya que el contenedor es quien controla la distribución : los hijos solo obedecen */
+  margin: 2em 7em;
+  gap: 3em;
+}
+
+.content-flex > img {
+  width: 50%;
+}
+
+.content-flex > div > * {
+  margin-top: 1em;
+}
+
+.content-flex > img {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+
+/* SECTION PONENTES */
+
+.speakers > h2 {
+text-align: center;
+}
+
+.ponente {
+margin-top: 30px;
+
+border: 3px solid rgb(59, 58, 58);
+background-color: rgb(228, 219, 219);
+display: flex; 
+flex-direction: column;
+
+align-items: center;
+}
+
+.ponentes {
+  display: flex;        
+  flex-wrap: wrap;      
+  gap: 2em;
+  margin: 2em 7em;
+}
+
+.ponente > img {
+width: 300px;
+height: 300px;
+
+}
+
+.ponente > .content > h3 {
+margin-top: 20px;
+}
+
+.ponente > .content > button {
+  width: 100px;
+  height: 50px;
+  margin: 30px;
+}
+
+
+/* HORARIO */
+
+.agenda {
+  display: flex;
+  margin: 2em 7em;
+  border: 1px solid rgb(200, 200, 200);
+}
+
+.agenda-times {
+  flex: 1;
+  border-right: 1px solid rgb(200, 200, 200);
+}
+
+.agenda-events {
+  flex: 3;
+}
+
+.agenda-times div,
+.agenda-events div {
+  padding: 1em;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(230, 230, 230);
+  padding-bottom: 3em;
+}
+
+.columns-3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  margin: 2em 7em;
+}
+
+.column {
+  flex: 1;
+}
+
+.column ul {
+  list-style: none;
+  margin-top: 1em;
+}
+
+.column ul li {
+  margin-bottom: 0.5em;
+}
+
+.column a {
+  text-decoration: none;
+  color: black;
+}
+
+.column img {
+  width: 24px;
+  height: 24px;
+}
+
+.column ul {
+  display: flex;
+  gap: 10px;
+}

@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub — Chuleta de comandos</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🐙 Git &amp; GitHub</h1>
+        <p>Chuleta de comandos</p>
+      </header>
+
+      <!-- Comandos básicos -->
+      <section>
+        <h2>⚡ Comandos básicos</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Comando</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git init</code></td>
+              <td class="desc">
+                Inicializa un repositorio Git en la carpeta actual
+              </td>
+            </tr>
+            <tr>
+              <td><code>git status</code></td>
+              <td class="desc">
+                Muestra el estado del repositorio (archivos modificados, en
+                staging, etc.)
+              </td>
+            </tr>
+            <tr>
+              <td><code>git add .</code></td>
+              <td class="desc">
+                Añade <strong>todos</strong> los cambios al área de preparación
+                (staging)
+              </td>
+            </tr>
+            <tr>
+              <td><code>git commit -m "mensaje"</code></td>
+              <td class="desc">
+                Guarda los cambios del staging con un mensaje descriptivo
+              </td>
+            </tr>
+            <tr>
+              <td><code>git push</code></td>
+              <td class="desc">
+                Sube los commits locales al repositorio remoto (GitHub)
+              </td>
+            </tr>
+            <tr>
+              <td><code>git pull</code></td>
+              <td class="desc">
+                Descarga y fusiona los cambios remotos en la rama local actual
+              </td>
+            </tr>
+            <tr>
+              <td><code>git log --oneline</code></td>
+              <td class="desc">
+                Muestra el historial de commits de forma resumida
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Árbol local vs remoto -->
+      <section>
+        <h2>🌳 Árbol local vs. árbol remoto</h2>
+        <div class="diagram">
+          <svg
+            class="git-diagram"
+            viewBox="0 0 860 260"
+            role="img"
+            aria-label="Diagrama de commits entre local y remoto con git pull y git push"
+          >
+            <text x="120" y="40" class="git-diagram-title">
+              Local (tu máquina)
+            </text>
+            <text x="540" y="40" class="git-diagram-title">
+              Remote (GitHub)
+            </text>
+
+            <line x1="90" y1="65" x2="360" y2="65" class="git-diagram-track" />
+            <line x1="510" y1="65" x2="780" y2="65" class="git-diagram-track" />
+
+            <line
+              x1="120"
+              y1="150"
+              x2="320"
+              y2="150"
+              class="git-diagram-track"
+            />
+            <line
+              x1="540"
+              y1="150"
+              x2="740"
+              y2="150"
+              class="git-diagram-track"
+            />
+
+            <circle cx="150" cy="150" r="11" class="git-node" />
+            <circle cx="290" cy="150" r="11" class="git-node" />
+            <text x="136" y="184" class="git-diagram-label">commit A</text>
+            <text x="276" y="184" class="git-diagram-label">commit B</text>
+
+            <circle cx="570" cy="150" r="11" class="git-node" />
+            <circle cx="710" cy="150" r="11" class="git-node" />
+            <text x="556" y="184" class="git-diagram-label">commit A</text>
+            <text x="696" y="184" class="git-diagram-label">commit B</text>
+
+            <line x1="320" y1="110" x2="540" y2="110" class="git-arrow" />
+            <polygon points="540,110 528,103 528,117" class="git-arrow-head" />
+            <text
+              x="390"
+              y="98"
+              class="git-diagram-action git-diagram-action--small"
+            >
+              git push
+            </text>
+
+            <line x1="540" y1="220" x2="320" y2="220" class="git-arrow" />
+            <polygon points="320,220 332,213 332,227" class="git-arrow-head" />
+            <text
+              x="392"
+              y="242"
+              class="git-diagram-action git-diagram-action--small"
+            >
+              git pull
+            </text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Ramas -->
+      <section>
+        <h2>🌿 Ramas (branches)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Comando</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git branch</code></td>
+              <td class="desc">
+                Lista las ramas locales (la rama activa aparece con
+                <code>*</code>)
+              </td>
+            </tr>
+            <tr>
+              <td><code>git branch develop</code></td>
+              <td class="desc">Crea la rama <code>develop</code></td>
+            </tr>
+            <tr>
+              <td><code>git checkout develop</code></td>
+              <td class="desc">Cambia a la rama <code>develop</code></td>
+            </tr>
+            <tr>
+              <td><code>git checkout -b develop</code></td>
+              <td class="desc">
+                Crea y cambia a <code>develop</code> en un solo paso
+              </td>
+            </tr>
+            <tr>
+              <td><code>git checkout master</code></td>
+              <td class="desc">Vuelve a la rama principal</td>
+            </tr>
+            <tr>
+              <td><code>git merge develop</code></td>
+              <td class="desc">
+                Fusiona <code>develop</code> en la rama activa
+                (<code>master</code>)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="diagram diagram--merge">
+          <svg
+            class="git-diagram"
+            viewBox="0 0 860 220"
+            role="img"
+            aria-label="Diagrama de ramas develop y master con merge commit"
+          >
+            <text x="70" y="40" class="git-diagram-title">develop</text>
+            <text x="70" y="150" class="git-diagram-title">master</text>
+
+            <line x1="170" y1="35" x2="500" y2="35" class="git-diagram-track" />
+            <line
+              x1="170"
+              y1="145"
+              x2="730"
+              y2="145"
+              class="git-diagram-track"
+            />
+
+            <circle cx="200" cy="35" r="10" class="git-node" />
+            <text x="192" y="62" class="git-diagram-label">A</text>
+            <circle cx="320" cy="35" r="10" class="git-node" />
+            <text x="312" y="62" class="git-diagram-label">B</text>
+            <circle cx="440" cy="35" r="10" class="git-node" />
+            <text x="432" y="62" class="git-diagram-label">C</text>
+
+            <circle cx="200" cy="145" r="10" class="git-node" />
+            <text x="192" y="172" class="git-diagram-label">A</text>
+
+            <line x1="440" y1="45" x2="620" y2="135" class="git-merge-line" />
+            <circle cx="620" cy="145" r="11" class="git-node-merge" />
+            <text x="612" y="172" class="git-diagram-label">M</text>
+
+            <text x="660" y="150" class="git-diagram-action">merge commit</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Flujo de trabajo completo -->
+      <section>
+        <h2>🔄 Flujo de trabajo completo</h2>
+        <p class="workflow-intro">
+          Hasta <code>git push</code> en <code>develop</code> el proceso es
+          igual. Después puedes elegir una de estas dos rutas:
+        </p>
+
+        <div class="workflow-split">
+          <article class="workflow-path">
+            <h3>🛠️ Ruta A: Terminal / VSCode (merge manual)</h3>
+            <div class="workflow">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-body">
+                  <p>Cambia a la rama de desarrollo</p>
+                  <code>git checkout develop</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-body">
+                  <p>Edita los archivos en VSCode</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-body">
+                  <p>Añade los cambios al staging</p>
+                  <code>git add .</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-body">
+                  <p>Guarda un commit descriptivo</p>
+                  <code class="code-wrap"
+                    >git commit -m "feat: nueva sección de contacto"</code
+                  >
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-body">
+                  <p>Sube a GitHub (rama <code>develop</code>)</p>
+                  <code>git push</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-body">
+                  <p>Haz merge manual desde terminal</p>
+                  <code>git checkout master</code> &nbsp;→&nbsp;
+                  <code>git merge develop</code> &nbsp;→&nbsp;
+                  <code>git push</code>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="workflow-path">
+            <h3>🌐 Ruta B: Pull Request en GitHub (UI)</h3>
+            <div class="workflow">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-body">
+                  <p>Cambia a la rama de desarrollo</p>
+                  <code>git checkout develop</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-body">
+                  <p>Edita los archivos en VSCode</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-body">
+                  <p>Añade los cambios al staging</p>
+                  <code>git add .</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-body">
+                  <p>Guarda un commit descriptivo</p>
+                  <code class="code-wrap"
+                    >git commit -m "feat: nueva sección de contacto"</code
+                  >
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-body">
+                  <p>Sube a GitHub (rama <code>develop</code>)</p>
+                  <code>git push</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">6</div>
+                <div class="step-body">
+                  <p>
+                    Abre un <strong>Pull Request</strong> (<code>develop</code>
+                    → <code>master</code>)
+                  </p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">7</div>
+                <div class="step-body">
+                  <p>Revisa y aprueba en GitHub</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">8</div>
+                <div class="step-body">
+                  <p>Haz el merge del PR en la UI de GitHub y despliega</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Vercel CI/CD -->
+      <section>
+        <h2>🚀 Vercel — CI/CD con GitHub</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Evento en GitHub</th>
+              <th>Acción de Vercel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git push</code> a <code>master</code></td>
+              <td class="desc">
+                <span class="tag">Producción</span>
+                Despliega en la URL pública
+              </td>
+            </tr>
+            <tr>
+              <td><code>git push</code> a <code>develop</code></td>
+              <td class="desc">
+                <span class="tag tag--preview">Preview</span>
+                Genera una URL de previsualización
+              </td>
+            </tr>
+            <tr>
+              <td>Pull Request abierto</td>
+              <td class="desc">
+                <span class="tag tag--preview">Preview</span>
+                Crea automáticamente una URL de preview del PR
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Git en VSCode -->
+      <section>
+        <h2>🖥️ Git desde VSCode (interfaz)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Acción en terminal</th>
+              <th>Equivalente en VSCode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>git add .</code></td>
+              <td class="desc">
+                Clic en <strong>+</strong> junto al archivo o en
+                <em>Stage All Changes</em>
+              </td>
+            </tr>
+            <tr>
+              <td><code>git commit -m "msg"</code></td>
+              <td class="desc">
+                Escribe el mensaje en el campo de texto y pulsa
+                <strong>✓ Commit</strong>
+              </td>
+            </tr>
+            <tr>
+              <td><code>git push</code></td>
+              <td class="desc">Botón <strong>Sync Changes ↑</strong></td>
+            </tr>
+            <tr>
+              <td><code>git pull</code></td>
+              <td class="desc">Botón <strong>Sync Changes ↓</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="vscode-note">
+          Abre el panel con <code>Ctrl + Shift + G</code> o haciendo clic en el
+          icono de bifurcación de la barra lateral.
+        </p>
+      </section>
+
+      <footer>
+        <p>PMI-2526 · Git &amp; GitHub</p>
+      </footer>
+    </div>
+  </body>
+</html>

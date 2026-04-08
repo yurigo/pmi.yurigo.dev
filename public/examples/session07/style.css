@@ -1,0 +1,58 @@
+.figure {
+  height: 200px;
+  width: 200px;
+
+  background-color: red;
+  display: inline-block;
+
+  /* border-color: green;
+  border-width: 10px;
+  border-style: solid; */
+
+  border: 10px solid green;
+
+  margin-inline: 10px;
+
+  box-shadow:
+    10px 10px 10px -10px rgb(128, 5, 243),
+    -10px -10px 10px -10px rgb(49, 192, 27),
+    -3px 3px 3px 0px rgb(231, 143, 19),
+    0px 0px 10px 0px black inset;
+}
+
+.cuadradito {
+  background-color: salmon;
+  /* border: 10px solid pink; */
+  border-color: pink;
+}
+
+.circle {
+  background-color: blue;
+  border-radius: 100%;
+}
+
+.triangle {
+  background-color: transparent;
+  border: 100px solid transparent;
+  border-top: 0 solid blue;
+  border-bottom: 170px solid red;
+}
+
+.engendro {
+  background-color: violet;
+  border-color: aqua;
+  border-radius: 40px;
+
+  /* border-top-left-radius: 150px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 10px; */
+
+  border-radius: 150px 25px 100px 10px;
+}
+
+.pill {
+  /* height: 100px; */
+  height: 100px;
+  border-radius: 50px;
+}
