@@ -7,7 +7,7 @@ description: "Imágenes, listas, tablas, multimedia y enlaces"
 
 # Sesión 02 - HTML Avanzado
 
-**Fecha:** 05/02/2026
+<!-- **Fecha:** 05/02/2026 -->
 
 ## Contenidos de la Sesión
 
@@ -48,6 +48,7 @@ La etiqueta `<img>` es un elemento auto-cerrado que se utiliza para incrustar im
 ```
 
 **Atributos de `<ol>`:**
+
 - `type="1"`: Números (por defecto)
 - `type="A"`: Letras mayúsculas
 - `type="a"`: Letras minúsculas
@@ -166,6 +167,7 @@ La etiqueta `<img>` es un elemento auto-cerrado que se utiliza para incrustar im
 ```
 
 **Atributos:**
+
 - `controls`: Muestra controles de reproducción
 - `autoplay`: Reproduce automáticamente al cargar
 - `muted`: Silencia el audio
@@ -178,5 +180,6 @@ La etiqueta `<img>` es un elemento auto-cerrado que se utiliza para incrustar im
 ```
 
 **Formatos soportados:**
+
 - Video: MP4, WebM, Ogg
 - Audio: MP3, WAV, Ogg

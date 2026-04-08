@@ -7,7 +7,7 @@ description: "position: fixed, variables CSS, pseudo-clases y backdrop-filter"
 
 # Sesión 10 - Corrección de la Actividad MWC
 
-**Fecha:** 4 de Marzo de 2026
+<!-- **Fecha:** 4 de Marzo de 2026 -->
 
 ## Contenidos de la Sesión
 
@@ -31,15 +31,16 @@ main {
 }
 ```
 
-| Valor | Descripción |
-| --- | --- |
-| `static` | Posicionamiento normal (por defecto) |
-| `relative` | Se desplaza relativo a su posición original |
-| `absolute` | Relativo al ancestro posicionado más cercano |
-| `fixed` | Relativo a la ventana; no se mueve con el scroll |
-| `sticky` | Como `relative` hasta un umbral, luego fija |
+| Valor      | Descripción                                      |
+| ---------- | ------------------------------------------------ |
+| `static`   | Posicionamiento normal (por defecto)             |
+| `relative` | Se desplaza relativo a su posición original      |
+| `absolute` | Relativo al ancestro posicionado más cercano     |
+| `fixed`    | Relativo a la ventana; no se mueve con el scroll |
+| `sticky`   | Como `relative` hasta un umbral, luego fija      |
 
 Propiedades que trabajan con `position`:
+
 - `top`, `right`, `bottom`, `left`
 - `z-index` — capas de apilamiento
 
@@ -49,15 +50,22 @@ Propiedades que trabajan con `position`:
 :root {
   --color-primario: rgba(44, 44, 45, 0.252);
   --color-de-fondo: rgb(243, 243, 243);
-  --fuente-principal: 'Inter', sans-serif;
+  --fuente-principal: "Inter", sans-serif;
 }
 
-body { background-color: var(--color-de-fondo); }
-header { background-color: var(--color-primario); }
-button { background-color: var(--color-primario); }
+body {
+  background-color: var(--color-de-fondo);
+}
+header {
+  background-color: var(--color-primario);
+}
+button {
+  background-color: var(--color-primario);
+}
 ```
 
 **Ventajas:**
+
 - Cambiar la variable actualiza todos los usos
 - Facilita temas (modo oscuro/claro)
 - Mejora la legibilidad del código
@@ -70,7 +78,7 @@ button { background-color: var(--color-primario); }
 header {
   position: fixed;
   background-color: rgba(44, 44, 45, 0.252); /* fondo semitransparente */
-  backdrop-filter: blur(25px);               /* desenfoca lo que hay detrás */
+  backdrop-filter: blur(25px); /* desenfoca lo que hay detrás */
 }
 ```
 
@@ -81,20 +89,24 @@ header {
 #### `:first-child` y `:last-child`
 
 ```css
-li:first-child { border-top: none; }
-li:last-child { border-bottom: none; }
+li:first-child {
+  border-top: none;
+}
+li:last-child {
+  border-bottom: none;
+}
 ```
 
 #### `:nth-child(n)`
 
-| Expresión | Selecciona |
-| --- | --- |
-| `:nth-child(1)` | El primer elemento |
-| `:nth-child(2n)` | Los elementos pares (2, 4, 6…) |
+| Expresión          | Selecciona                       |
+| ------------------ | -------------------------------- |
+| `:nth-child(1)`    | El primer elemento               |
+| `:nth-child(2n)`   | Los elementos pares (2, 4, 6…)   |
 | `:nth-child(2n+1)` | Los elementos impares (1, 3, 5…) |
-| `:nth-child(odd)` | Los impares |
-| `:nth-child(even)` | Los pares |
-| `:nth-child(-n+3)` | Los tres primeros |
+| `:nth-child(odd)`  | Los impares                      |
+| `:nth-child(even)` | Los pares                        |
+| `:nth-child(-n+3)` | Los tres primeros                |
 
 ```css
 /* Filas de tabla alternadas */
@@ -135,12 +147,12 @@ tr:nth-child(2n) {
 }
 ```
 
-| Valor | Descripción |
-| --- | --- |
-| `center` | Centra la imagen (defecto) |
-| `top` | Muestra la parte superior |
-| `bottom` | Muestra la parte inferior |
-| `50% 20%` | Posición exacta en X e Y |
+| Valor     | Descripción                |
+| --------- | -------------------------- |
+| `center`  | Centra la imagen (defecto) |
+| `top`     | Muestra la parte superior  |
+| `bottom`  | Muestra la parte inferior  |
+| `50% 20%` | Posición exacta en X e Y   |
 
 ### 7. `overflow: hidden`
 

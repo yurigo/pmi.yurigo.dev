@@ -7,7 +7,7 @@ description: "Elementos semánticos, atributos id/class, block vs inline"
 
 # Sesión 03 - HTML5 Semántico
 
-**Fecha:** 10/02/2026
+<!-- **Fecha:** 10/02/2026 -->
 
 ## Contenidos de la Sesión
 
@@ -16,35 +16,39 @@ description: "Elementos semánticos, atributos id/class, block vs inline"
 #### Elementos de Bloque (Block)
 
 **Características:**
+
 - Ocupan todo el ancho disponible del contenedor padre
 - Siempre comienzan en una nueva línea
 - Pueden contener otros elementos de bloque y elementos en línea
 - Tienen altura y anchura configurables
 
 **Ejemplos comunes:**
+
 - `<div>`, `<p>`, `<h1>`–`<h6>`, `<ul>`, `<ol>`, `<table>`
 - `<header>`, `<footer>`, `<main>`, `<section>`, `<article>`
 
 #### Elementos en Línea (Inline)
 
 **Características:**
+
 - Ocupan solo el espacio necesario para su contenido
 - No comienzan en una nueva línea
 - Solo pueden contener otros elementos en línea y texto
 - No aceptan propiedades de altura y anchura
 
 **Ejemplos comunes:**
+
 - `<span>`, `<a>`, `<strong>`, `<em>`, `<img>`
 
 **Diferencias clave:**
 
-| Característica | Block | Inline |
-| --- | --- | --- |
-| Ancho | 100% del contenedor | Solo el contenido |
-| Nueva línea | Sí | No |
-| Puede contener | Block e Inline | Solo Inline y texto |
-| Width/Height | Sí | No |
-| Márgenes verticales | Sí | No |
+| Característica      | Block               | Inline              |
+| ------------------- | ------------------- | ------------------- |
+| Ancho               | 100% del contenedor | Solo el contenido   |
+| Nueva línea         | Sí                  | No                  |
+| Puede contener      | Block e Inline      | Solo Inline y texto |
+| Width/Height        | Sí                  | No                  |
+| Márgenes verticales | Sí                  | No                  |
 
 ### 2. Atributos Generales en HTML
 
@@ -61,6 +65,7 @@ Proporciona un identificador único para un elemento.
 ```
 
 **Buenas prácticas:**
+
 - Debe ser único en toda la página
 - Usar nombres descriptivos en camelCase o kebab-case
 - No empezar con números
@@ -102,6 +107,7 @@ Texto que aparece como tooltip al pasar el cursor sobre el elemento.
 HTML5 introduce elementos semánticos que describen el significado y la estructura del contenido.
 
 **¿Por qué usar etiquetas semánticas?**
+
 - Mejora la accesibilidad (lectores de pantalla)
 - Mejora el SEO
 - Hace el código más legible y mantenible

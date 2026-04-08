@@ -7,7 +7,7 @@ description: "Formularios, inputs, validación y elementos de formulario"
 
 # Sesión 05 - Formularios HTML
 
-**Fecha:** 17 de Febrero de 2026
+<!-- **Fecha:** 17 de Febrero de 2026 -->
 
 ## Contenidos de la Sesión
 
@@ -16,6 +16,7 @@ description: "Formularios, inputs, validación y elementos de formulario"
 Los **formularios HTML** permiten recopilar información del usuario y enviarla a un servidor.
 
 **Ejemplos comunes:**
+
 - Formularios de contacto
 - Formularios de registro/login
 - Búsquedas
@@ -48,6 +49,7 @@ Los **formularios HTML** permiten recopilar información del usuario y enviarla 
 ```
 
 **Atributos comunes:**
+
 - **`type`**: Define el tipo de campo
 - **`name`**: Identificador del campo al enviar (¡obligatorio para que se envíe!)
 - **`id`**: Para vincular con `<label>`
@@ -144,8 +146,13 @@ Los **formularios HTML** permiten recopilar información del usuario y enviarla 
 
 ```html
 <label for="mensaje">Mensaje:</label>
-<textarea id="mensaje" name="mensaje" rows="5" cols="40"
-  placeholder="Escribe tu mensaje..."></textarea>
+<textarea
+  id="mensaje"
+  name="mensaje"
+  rows="5"
+  cols="40"
+  placeholder="Escribe tu mensaje..."
+></textarea>
 ```
 
 #### `<select>` — Lista desplegable
@@ -188,15 +195,21 @@ Los **formularios HTML** permiten recopilar información del usuario y enviarla 
 <form action="/registro" method="POST">
   <input type="text" name="nombre" required minlength="2" maxlength="50" />
   <input type="email" name="email" required />
-  <input type="password" name="password" required minlength="8"
+  <input
+    type="password"
+    name="password"
+    required
+    minlength="8"
     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-    title="Debe contener mayúsculas, minúsculas y números" />
+    title="Debe contener mayúsculas, minúsculas y números"
+  />
   <input type="number" name="edad" min="18" max="100" />
   <button type="submit">Registrarse</button>
 </form>
 ```
 
 **Atributos de validación:**
+
 - `required`: Campo obligatorio
 - `minlength` / `maxlength`: Longitud del texto
 - `min` / `max`: Valores numéricos o de fecha

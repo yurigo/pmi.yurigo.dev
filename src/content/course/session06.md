@@ -7,7 +7,7 @@ description: "CSS Reset, box-sizing y el modelo de caja"
 
 # Sesión 06 - CSS Box Model y Reset CSS
 
-**Fecha:** 18 de Febrero de 2026
+<!-- **Fecha:** 18 de Febrero de 2026 -->
 
 ## Contenidos de la Sesión
 
@@ -18,12 +18,66 @@ Los navegadores aplican estilos por defecto que varían entre ellos. Un **CSS Re
 #### Meyer's CSS Reset
 
 ```css
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, em, img, ins, kbd, q, s, samp, small, strike, strong,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figure, figcaption, footer,
-header, menu, nav, output, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -31,16 +85,26 @@ header, menu, nav, output, section, summary, time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
-body { line-height: 1; }
-ol, ul { list-style: none; }
-table { border-collapse: collapse; border-spacing: 0; }
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 ```
 
 #### Josh Comeau's Modern CSS Reset
 
 ```css
 /* 1. Box-sizing */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -57,32 +121,55 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 body {
-  line-height: 1.5;                  /* 4. Accessible line-height */
+  line-height: 1.5; /* 4. Accessible line-height */
   -webkit-font-smoothing: antialiased; /* 5. Improve text rendering */
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
 /* 9. Improve line wrapping */
-p { text-wrap: pretty; }
-h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
 
 /* 10. Root stacking context */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 ```
@@ -163,10 +250,10 @@ Las propiedades lógicas son independientes del idioma (LTR/RTL):
 
 ```css
 .elemento {
-  display: block;        /* bloque (por defecto en div, p, h1...) */
-  display: inline;       /* en línea (por defecto en span, a, img...) */
+  display: block; /* bloque (por defecto en div, p, h1...) */
+  display: inline; /* en línea (por defecto en span, a, img...) */
   display: inline-block; /* en línea pero acepta width/height */
-  display: none;         /* oculta el elemento completamente */
+  display: none; /* oculta el elemento completamente */
 }
 ```
 
@@ -177,9 +264,9 @@ Las propiedades lógicas son independientes del idioma (LTR/RTL):
   width: 200px;
   height: 100px;
   overflow: visible; /* por defecto: el contenido desborda */
-  overflow: hidden;  /* recorta el contenido que desborda */
-  overflow: scroll;  /* siempre muestra barras de scroll */
-  overflow: auto;    /* muestra scroll solo si es necesario */
+  overflow: hidden; /* recorta el contenido que desborda */
+  overflow: scroll; /* siempre muestra barras de scroll */
+  overflow: auto; /* muestra scroll solo si es necesario */
 }
 ```
 
@@ -187,17 +274,23 @@ Las propiedades lógicas son independientes del idioma (LTR/RTL):
 
 La especificidad determina qué estilos tienen prioridad:
 
-| Selector | Especificidad |
-| --- | --- |
-| Elemento (`p`) | 0-0-1 |
-| Clase (`.clase`) | 0-1-0 |
-| ID (`#id`) | 1-0-0 |
-| Inline style | máxima |
-| `!important` | anula todo |
+| Selector         | Especificidad |
+| ---------------- | ------------- |
+| Elemento (`p`)   | 0-0-1         |
+| Clase (`.clase`) | 0-1-0         |
+| ID (`#id`)       | 1-0-0         |
+| Inline style     | máxima        |
+| `!important`     | anula todo    |
 
 ```css
 /* Más específico tiene prioridad */
-p { color: blue; }         /* especificidad: 0-0-1 */
-.texto { color: red; }     /* especificidad: 0-1-0 → gana */
-#principal { color: green; } /* especificidad: 1-0-0 → gana */
+p {
+  color: blue;
+} /* especificidad: 0-0-1 */
+.texto {
+  color: red;
+} /* especificidad: 0-1-0 → gana */
+#principal {
+  color: green;
+} /* especificidad: 1-0-0 → gana */
 ```

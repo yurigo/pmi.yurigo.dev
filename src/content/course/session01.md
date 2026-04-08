@@ -7,7 +7,7 @@ description: "Introducción a la asignatura, HTML básico y herramientas"
 
 # Sesión 01 - Introducción a Web
 
-**Fecha:** 03/02/2026
+<!-- **Fecha:** 03/02/2026 -->
 
 ## Contenidos de la Sesión
 
