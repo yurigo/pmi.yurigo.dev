@@ -1,3 +1,10 @@
+---
+title: "Sesión 12 - CSS Grid Declarativo: grid-template-areas"
+section: "CSS"
+order: 12
+description: "Grid declarativo con grid-template-areas, grid-area y media queries"
+---
+
 # Sesión 12 - CSS Grid Declarativo: `grid-template-areas`
 
 **Fecha:** 11 de Marzo de 2026
@@ -26,6 +33,7 @@ body {
 ```
 
 En el ejemplo anterior:
+
 - La primera fila tiene 7 columnas y todas pertenecen al área `a` (el `header` ocupa toda la anchura).
 - La segunda fila tiene 6 columnas para el área `b` (`main`) y 1 columna para el área `c` (`aside`).
 - La tercera fila tiene 7 columnas y todas pertenecen al área `d` (el `footer` ocupa toda la anchura).
@@ -67,10 +75,10 @@ footer {
 
 ### 3. Diferencia entre Grid imperativo y declarativo
 
-| Enfoque | Cómo se posicionan los elementos | Cuándo usarlo |
-| ------- | -------------------------------- | ------------- |
-| **Imperativo** (sesión 11) | Con números de línea: `grid-column: 1 / -1` | Layouts complejos con posiciones exactas |
-| **Declarativo** (sesión 12) | Con nombres de área: `grid-area: header` | Layouts de página clásicos, más legibles |
+| Enfoque                     | Cómo se posicionan los elementos            | Cuándo usarlo                            |
+| --------------------------- | ------------------------------------------- | ---------------------------------------- |
+| **Imperativo** (sesión 11)  | Con números de línea: `grid-column: 1 / -1` | Layouts complejos con posiciones exactas |
+| **Declarativo** (sesión 12) | Con nombres de área: `grid-area: header`    | Layouts de página clásicos, más legibles |
 
 El enfoque declarativo resulta especialmente útil para el **layout principal de una página** (header, main, aside, footer) porque el código refleja visualmente la estructura final.
 
@@ -81,6 +89,7 @@ El enfoque declarativo resulta especialmente útil para el **layout principal de
 El archivo [`declarativa.html`](./grid-example-continuacion/declarativa.html) con [`style3.css`](./grid-example-continuacion/style3.css) muestra el layout clásico de página construido de forma declarativa:
 
 **HTML:**
+
 ```html
 <body>
   <header>...</header>
@@ -91,6 +100,7 @@ El archivo [`declarativa.html`](./grid-example-continuacion/declarativa.html) co
 ```
 
 **CSS:**
+
 ```css
 body {
   height: 100vh;
@@ -102,10 +112,18 @@ body {
   grid-template-rows: 100px 1fr 60px;
 }
 
-header { grid-area: a; }
-main   { grid-area: b; }
-aside  { grid-area: c; }
-footer { grid-area: d; }
+header {
+  grid-area: a;
+}
+main {
+  grid-area: b;
+}
+aside {
+  grid-area: c;
+}
+footer {
+  grid-area: d;
+}
 ```
 
 **Resultado visual:**
@@ -176,9 +194,10 @@ Una vez vista la teoría, se ha propuesto la siguiente actividad práctica:
 
 Realiza el maquetado de la siguiente página usando `grid-template-areas`:
 
-![actividad maquetado](actividad-maquetado.png)
+![actividad maquetado](./assets/actividad-maquetado.png)
 
 **Indicaciones:**
+
 - Usa `grid-template-areas` para definir el layout.
 - Asigna cada elemento semántico (`header`, `nav`, `main`, `aside`, `footer`) a su área correspondiente.
 - Adapta el layout a pantallas pequeñas con una media query.
@@ -197,6 +216,7 @@ En esta sesión hemos aprendido:
 **Lo más importante:**
 
 > [!IMPORTANT]
+>
 > - `grid-template-areas` describe el layout visualmente: cada cadena es una fila, cada palabra es una columna
 > - Cada área debe ser rectangular; el punto `.` sirve para dejar celdas vacías
 > - `grid-area: nombre` asigna el elemento al área con ese nombre (diferente al shorthand de 4 valores numéricos)

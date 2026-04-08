@@ -1,10 +1,17 @@
+---
+title: "Sesión 15 - Responsividad en Diseño Web"
+section: "CSS"
+order: 15
+description: "Diseño responsive con media queries, breakpoints y enfoque mobile first"
+---
+
 # Sesión 15 - Responsividad en Diseño Web
 
 **Fecha:** 7 de Abril de 2026
 
 ## Contenidos de la Sesión
 
-En esta sesión se ha explicado cómo hacer que una página web se adapte a cualquier tamaño de pantalla usando **Media Queries**. Se han visto los conceptos de *breakpoints*, la diferencia entre **Mobile First** y **Desktop First**, y las dos sintaxis disponibles para escribir media queries. También se ha explorado la media query especial `@media print` para controlar el aspecto al imprimir.
+En esta sesión se ha explicado cómo hacer que una página web se adapte a cualquier tamaño de pantalla usando **Media Queries**. Se han visto los conceptos de _breakpoints_, la diferencia entre **Mobile First** y **Desktop First**, y las dos sintaxis disponibles para escribir media queries. También se ha explorado la media query especial `@media print` para controlar el aspecto al imprimir.
 
 El ejemplo construido en clase se encuentra en la carpeta [`example/`](./example/), con tres archivos: [`index.html`](./example/index.html), [`mobile-first.css`](./example/mobile-first.css) y [`desktop-first.css`](./example/desktop-first.css).
 
@@ -12,7 +19,7 @@ El ejemplo construido en clase se encuentra en la carpeta [`example/`](./example
 
 ### 1. ¿Qué es la responsividad?
 
-La **responsividad** (del inglés *responsive design*) es la capacidad de una página web para adaptarse de forma fluida a diferentes tamaños de pantalla: móvil, tablet, laptop y desktop.
+La **responsividad** (del inglés _responsive design_) es la capacidad de una página web para adaptarse de forma fluida a diferentes tamaños de pantalla: móvil, tablet, laptop y desktop.
 
 👉 No son varias webs diferentes  
 👉 Es **una sola web que se adapta** a cada dispositivo
@@ -62,12 +69,12 @@ Si la pantalla tiene **600px de ancho o menos** → se aplica el fondo rojo.
 
 Los **breakpoints** son los valores de ancho en los que el diseño "rompe" (cambia) para adaptarse al dispositivo. Los más habituales son:
 
-| Dispositivo | Rango de ancho       |
-| ----------- | -------------------- |
-| 📱 Móvil    | hasta 600px          |
-| 📲 Tablet   | 600px – 1024px       |
-| 💻 Laptop   | 1024px – 1440px      |
-| 🖥️ Desktop  | más de 1440px        |
+| Dispositivo | Rango de ancho  |
+| ----------- | --------------- |
+| 📱 Móvil    | hasta 600px     |
+| 📲 Tablet   | 600px – 1024px  |
+| 💻 Laptop   | 1024px – 1440px |
+| 🖥️ Desktop  | más de 1440px   |
 
 No existe un estándar único de breakpoints: dependen del diseño concreto de cada proyecto. Lo importante es definirlos según el contenido, no según los modelos de dispositivos.
 
@@ -78,8 +85,12 @@ No existe un estándar único de breakpoints: dependen del diseño concreto de c
 #### ✅ Sintaxis clásica (recomendada)
 
 ```css
-@media (max-width: 600px) { /* hasta 600px */ }
-@media (min-width: 600px) { /* desde 600px */ }
+@media (max-width: 600px) {
+  /* hasta 600px */
+}
+@media (min-width: 600px) {
+  /* desde 600px */
+}
 ```
 
 - `max-width` → aplica estilos **hasta** ese ancho (enfoque Desktop First)
@@ -88,14 +99,19 @@ No existe un estándar único de breakpoints: dependen del diseño concreto de c
 #### 🆕 Sintaxis moderna
 
 ```css
-@media (width <= 600px) { /* hasta 600px */ }
-@media (width >= 600px) { /* desde 600px */ }
+@media (width <= 600px) {
+  /* hasta 600px */
+}
+@media (width >= 600px) {
+  /* desde 600px */
+}
 ```
 
 Más intuitiva y legible, pero con menor compatibilidad en navegadores antiguos. Para proyectos modernos es perfectamente válida.
 
 > [!NOTE]
 > Puedes combinar condiciones con `and`, `or` y `not`:
+>
 > ```css
 > @media (min-width: 600px) and (max-width: 1024px) {
 >   /* solo en tablet */
@@ -228,6 +244,7 @@ En esta sesión hemos aprendido:
 **Lo más importante:**
 
 > [!IMPORTANT]
+>
 > - Una web responsiva es **una sola web** que se adapta, no múltiples versiones
 > - Usa `min-width` para **Mobile First** y `max-width` para **Desktop First**
 > - Incluye siempre la meta etiqueta `viewport` en el `<head>` de tu HTML

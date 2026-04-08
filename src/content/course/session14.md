@@ -1,3 +1,10 @@
+---
+title: "Sesión 14 - CSS Transitions, Transforms y Animations"
+section: "CSS"
+order: 14
+description: "Movimiento en CSS con transition, transform, animation y keyframes"
+---
+
 # Sesión 14 - CSS Transitions, Transforms y Animations
 
 **Fecha:** 18 de Marzo de 2026
@@ -22,12 +29,12 @@ selector {
 }
 ```
 
-| Propiedad sub-valor          | Descripción                                                   |
-| ---------------------------- | ------------------------------------------------------------- |
-| `transition-property`        | La propiedad CSS que se quiere animar (`all`, `transform`…)   |
-| `transition-duration`        | Duración de la transición (`250ms`, `1s`…)                    |
-| `transition-timing-function` | Curva de velocidad (`linear`, `ease`, `ease-in-out`…)         |
-| `transition-delay`           | Retardo antes de que comience la transición                   |
+| Propiedad sub-valor          | Descripción                                                 |
+| ---------------------------- | ----------------------------------------------------------- |
+| `transition-property`        | La propiedad CSS que se quiere animar (`all`, `transform`…) |
+| `transition-duration`        | Duración de la transición (`250ms`, `1s`…)                  |
+| `transition-timing-function` | Curva de velocidad (`linear`, `ease`, `ease-in-out`…)       |
+| `transition-delay`           | Retardo antes de que comience la transición                 |
 
 #### Ejemplo: transición múltiple
 
@@ -37,8 +44,8 @@ En el ejemplo de clase, las secciones tienen tres propiedades animadas:
 section {
   transition:
     transform 250ms linear 0ms,
-    rotate    250ms linear 0ms,
-    scale     250ms linear 0ms;
+    rotate 250ms linear 0ms,
+    scale 250ms linear 0ms;
 }
 ```
 
@@ -88,13 +95,13 @@ a:hover {
 
 Las funciones de `transform` más habituales:
 
-| Función              | Descripción                                                        |
-| -------------------- | ------------------------------------------------------------------ |
-| `rotate(ángulo)`     | Gira el elemento el ángulo indicado (en `deg`, `rad`, `turn`…)     |
-| `translate(x, y)`   | Desplaza el elemento horizontal y verticalmente                    |
-| `translateX(x)`     | Desplaza el elemento horizontalmente                               |
-| `translateY(y)`     | Desplaza el elemento verticalmente                                 |
-| `scale(factor)`     | Escala el elemento (1 = tamaño original, 1.5 = 50% más grande)     |
+| Función           | Descripción                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| `rotate(ángulo)`  | Gira el elemento el ángulo indicado (en `deg`, `rad`, `turn`…) |
+| `translate(x, y)` | Desplaza el elemento horizontal y verticalmente                |
+| `translateX(x)`   | Desplaza el elemento horizontalmente                           |
+| `translateY(y)`   | Desplaza el elemento verticalmente                             |
+| `scale(factor)`   | Escala el elemento (1 = tamaño original, 1.5 = 50% más grande) |
 
 ```css
 /* Ejemplo del enlace de clase */
@@ -115,7 +122,7 @@ CSS moderno permite escribir `rotate`, `scale` y `translate` como **propiedades 
 section {
   transition:
     rotate 250ms linear 0ms,
-    scale  250ms linear 0ms;
+    scale 250ms linear 0ms;
 }
 
 section:hover {
@@ -160,24 +167,24 @@ A diferencia de `transition` (que sólo reacciona a cambios de estado), `animati
 
 ```css
 section {
-  animation-name:             tembleque;
-  animation-duration:         100ms;
-  animation-timing-function:  linear;
-  animation-direction:        normal;
-  animation-iteration-count:  infinite;
+  animation-name: tembleque;
+  animation-duration: 100ms;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
 }
 ```
 
-| Propiedad                    | Descripción                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------------ |
-| `animation-name`             | Nombre del `@keyframes` que se quiere reproducir                                     |
-| `animation-duration`         | Duración de un ciclo completo                                                        |
-| `animation-timing-function`  | Curva de velocidad (`linear`, `ease`, `ease-in-out`…)                                |
-| `animation-delay`            | Retardo antes de que empiece la animación                                            |
-| `animation-iteration-count`  | Número de repeticiones (`1`, `3`, `infinite`…)                                       |
-| `animation-direction`        | Dirección de reproducción (`normal`, `reverse`, `alternate`, `alternate-reverse`)    |
-| `animation-fill-mode`        | Estado del elemento antes/después de la animación (`none`, `forwards`, `backwards`)  |
-| `animation-play-state`       | `running` (en reproducción) o `paused` (pausada)                                     |
+| Propiedad                   | Descripción                                                                         |
+| --------------------------- | ----------------------------------------------------------------------------------- |
+| `animation-name`            | Nombre del `@keyframes` que se quiere reproducir                                    |
+| `animation-duration`        | Duración de un ciclo completo                                                       |
+| `animation-timing-function` | Curva de velocidad (`linear`, `ease`, `ease-in-out`…)                               |
+| `animation-delay`           | Retardo antes de que empiece la animación                                           |
+| `animation-iteration-count` | Número de repeticiones (`1`, `3`, `infinite`…)                                      |
+| `animation-direction`       | Dirección de reproducción (`normal`, `reverse`, `alternate`, `alternate-reverse`)   |
+| `animation-fill-mode`       | Estado del elemento antes/después de la animación (`none`, `forwards`, `backwards`) |
+| `animation-play-state`      | `running` (en reproducción) o `paused` (pausada)                                    |
 
 #### Shorthand `animation`
 
@@ -227,7 +234,7 @@ section::after {
   top: 0;
   left: 0;
   bottom: 0;
-  right: 100%;              /* el pseudo-elemento tiene ancho 0 */
+  right: 100%; /* el pseudo-elemento tiene ancho 0 */
   background-color: rgb(109, 26, 80);
   z-index: -1;
   transition: right 1s ease-in-out 0ms;
@@ -255,13 +262,13 @@ section {
 
 ### 7. Diferencias entre `transition` y `animation`
 
-| Característica         | `transition`                              | `animation`                                  |
-| ---------------------- | ----------------------------------------- | -------------------------------------------- |
-| Activación             | Requiere un cambio de estado (`:hover`…)  | Se ejecuta automáticamente                   |
-| Secuencia de pasos     | Solo de A → B                             | Múltiples fotogramas con `@keyframes`         |
-| Repetición             | No (sólo va y vuelta si se deshace)       | Sí (`animation-iteration-count: infinite`)   |
-| Control detallado      | Limitado                                  | Completo (dirección, relleno, pausa…)        |
-| Cuándo usarlo          | Efectos de hover simples                  | Animaciones complejas o en bucle             |
+| Característica     | `transition`                             | `animation`                                |
+| ------------------ | ---------------------------------------- | ------------------------------------------ |
+| Activación         | Requiere un cambio de estado (`:hover`…) | Se ejecuta automáticamente                 |
+| Secuencia de pasos | Solo de A → B                            | Múltiples fotogramas con `@keyframes`      |
+| Repetición         | No (sólo va y vuelta si se deshace)      | Sí (`animation-iteration-count: infinite`) |
+| Control detallado  | Limitado                                 | Completo (dirección, relleno, pausa…)      |
+| Cuándo usarlo      | Efectos de hover simples                 | Animaciones complejas o en bucle           |
 
 ---
 
@@ -291,6 +298,7 @@ En esta sesión hemos aprendido:
 **Lo más importante:**
 
 > [!IMPORTANT]
+>
 > - `transition` reacciona a cambios de estado; `animation` se ejecuta sola
 > - Las propiedades individuales `rotate`, `scale` y `translate` permiten animar cada transformación por separado con `transition`
 > - `@keyframes` define la secuencia de fotogramas; `animation-name` la aplica al elemento

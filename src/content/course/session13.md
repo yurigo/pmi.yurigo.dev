@@ -1,3 +1,10 @@
+---
+title: "Sesión 13 - CSS Positioning"
+section: "CSS"
+order: 13
+description: "Position en CSS: relative, absolute, fixed, sticky, z-index e inset"
+---
+
 # Sesión 13 - CSS Positioning
 
 **Fecha:** 17 de Marzo de 2026
@@ -16,11 +23,11 @@ Por defecto todos los elementos HTML tienen `position: static`, lo que significa
 
 ```css
 .elemento {
-  position: static;    /* valor por defecto: el elemento sigue el flujo normal */
-  position: relative;  /* se desplaza respecto a su posición original */
-  position: absolute;  /* se desplaza respecto al ancestro posicionado más cercano */
-  position: fixed;     /* se desplaza respecto al viewport y no se mueve al hacer scroll */
-  position: sticky;    /* se comporta como relative hasta cruzar un umbral, luego como fixed */
+  position: static; /* valor por defecto: el elemento sigue el flujo normal */
+  position: relative; /* se desplaza respecto a su posición original */
+  position: absolute; /* se desplaza respecto al ancestro posicionado más cercano */
+  position: fixed; /* se desplaza respecto al viewport y no se mueve al hacer scroll */
+  position: sticky; /* se comporta como relative hasta cruzar un umbral, luego como fixed */
 }
 ```
 
@@ -56,9 +63,9 @@ El elemento **sale del flujo** del documento (deja de ocupar espacio) y se posic
 #about > span {
   font-size: 100px;
   position: absolute;
-  top: 40%;           /* 40% desde el borde superior de #about */
-  left: 40%;          /* 40% desde el borde izquierdo de #about */
-  z-index: -1;        /* queda por debajo del texto */
+  top: 40%; /* 40% desde el borde superior de #about */
+  left: 40%; /* 40% desde el borde izquierdo de #about */
+  z-index: -1; /* queda por debajo del texto */
   opacity: 0.6;
   filter: drop-shadow(5px 5px 10px black);
 }
@@ -79,7 +86,7 @@ El elemento sale del flujo y se posiciona respecto al **viewport** (la ventana d
 header {
   position: fixed;
   inset: 0 0 auto 0; /* top:0 right:0 bottom:auto left:0 → pegado a la parte superior */
-  z-index: 10;       /* aparece por encima del resto del contenido */
+  z-index: 10; /* aparece por encima del resto del contenido */
   background-color: var(--verde-neon);
 }
 ```
@@ -104,13 +111,13 @@ section > h2 {
 
 **Resultado:** cada subtítulo `<h2>` de las secciones se queda visible en la parte superior mientras el usuario lee esa sección, y desaparece al entrar la siguiente sección.
 
-| Valor      | Sale del flujo | Referencia              | Se mueve con el scroll |
-| ---------- | -------------- | ----------------------- | ---------------------- |
-| `static`   | No             | —                       | Sí (flujo normal)      |
-| `relative` | No             | Su posición original    | Sí                     |
-| `absolute` | Sí             | Ancestro posicionado    | Sí (con el ancestro)   |
-| `fixed`    | Sí             | Viewport                | No                     |
-| `sticky`   | No             | Su posición original    | Hasta el umbral        |
+| Valor      | Sale del flujo | Referencia           | Se mueve con el scroll |
+| ---------- | -------------- | -------------------- | ---------------------- |
+| `static`   | No             | —                    | Sí (flujo normal)      |
+| `relative` | No             | Su posición original | Sí                     |
+| `absolute` | Sí             | Ancestro posicionado | Sí (con el ancestro)   |
+| `fixed`    | Sí             | Viewport             | No                     |
+| `sticky`   | No             | Su posición original | Hasta el umbral        |
 
 ---
 
@@ -121,8 +128,8 @@ Estas propiedades indican el desplazamiento desde cada borde respecto al punto d
 ```css
 .elemento {
   position: absolute;
-  top: 20px;    /* 20px desde el borde superior del ancestro posicionado */
-  left: 50%;    /* 50% desde el borde izquierdo del ancestro posicionado */
+  top: 20px; /* 20px desde el borde superior del ancestro posicionado */
+  left: 50%; /* 50% desde el borde izquierdo del ancestro posicionado */
 }
 ```
 
@@ -214,12 +221,12 @@ h1:nth-child(2):hover {
 }
 ```
 
-| Pseudo-clase       | Descripción                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| `:first-child`     | Selecciona el elemento si es el **primer** hijo de su padre   |
-| `:last-child`      | Selecciona el elemento si es el **último** hijo de su padre   |
-| `:nth-child(n)`    | Selecciona el elemento si es el hijo número **n** de su padre |
-| `:not(selector)`   | Selecciona el elemento si **no** coincide con el selector     |
+| Pseudo-clase     | Descripción                                                   |
+| ---------------- | ------------------------------------------------------------- |
+| `:first-child`   | Selecciona el elemento si es el **primer** hijo de su padre   |
+| `:last-child`    | Selecciona el elemento si es el **último** hijo de su padre   |
+| `:nth-child(n)`  | Selecciona el elemento si es el hijo número **n** de su padre |
+| `:not(selector)` | Selecciona el elemento si **no** coincide con el selector     |
 
 ---
 
@@ -252,6 +259,7 @@ En esta sesión hemos aprendido:
 **Lo más importante:**
 
 > [!IMPORTANT]
+>
 > - `position: static` es el valor por defecto; el elemento sigue el flujo normal y no acepta `z-index`
 > - `position: absolute` y `position: fixed` sacan al elemento del flujo (los demás actúan como si no existiese)
 > - Para que un hijo `absolute` se posicione dentro de su contenedor, el contenedor necesita `position: relative` (o cualquier valor distinto de `static`)
