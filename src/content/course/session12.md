@@ -194,7 +194,7 @@ Una vez vista la teoría, se ha propuesto la siguiente actividad práctica:
 
 Realiza el maquetado de la siguiente página usando `grid-template-areas`:
 
-![actividad maquetado](actividad-maquetado.png)
+![actividad maquetado](./assets/actividad-maquetado.png)
 
 **Indicaciones:**
 
