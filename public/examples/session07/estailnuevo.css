@@ -1,0 +1,36 @@
+/* html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+} 
+
+section {
+    height: 100%;   <---- para que haga efecto el 100% el contenedor tiene que estar al 100%
+} */
+
+section {
+  height: 100dvh;
+  background-image: url("https://placecats.com/600/600");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+section.lados {
+  background-image: none;
+  background-color: salmon;
+  cursor:
+    url("./ufo.svg") 10 10,
+    pointer;
+}
+
+section:last-child {
+  background-image: url("https://placecats.com/600/700");
+}

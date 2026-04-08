@@ -1,0 +1,317 @@
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Variables ── */
+:root {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-accent: #238636;
+  --color-accent-hover: #2ea043;
+  --color-text: #c9d1d9;
+  --color-text-muted: #8b949e;
+  --color-heading: #f0f6fc;
+  --color-code-bg: #1f2937;
+  --color-tag: #1f6feb;
+  --font-mono: "Courier New", Courier, monospace;
+  --radius: 8px;
+  --gap: 1.5rem;
+}
+
+/* ── Base ── */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+/* ── Section ── */
+section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: var(--gap);
+}
+
+section h2 {
+  color: var(--color-heading);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Command table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+tbody td {
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Code ── */
+code {
+  background-color: var(--color-code-bg);
+  color: #79c0ff;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.desc {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.code-wrap {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ── Workflow ── */
+.workflow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workflow-intro {
+  margin-bottom: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.workflow-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.workflow-path {
+  background-color: rgba(31, 41, 55, 0.35);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.workflow-path h3 {
+  color: var(--color-heading);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  background-color: var(--color-accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.step-body p {
+  font-size: 0.95rem;
+}
+
+/* ── Diagram ── */
+.diagram {
+  background-color: var(--color-code-bg);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+}
+
+.git-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.git-diagram-title {
+  fill: var(--color-heading);
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.git-diagram-label {
+  fill: #9ecbff;
+  font-size: 18px;
+  font-family: var(--font-mono);
+}
+
+.git-diagram-action {
+  fill: #79c0ff;
+  font-size: 20px;
+  font-family: var(--font-mono);
+}
+
+.git-diagram-action--small {
+  font-size: 16px;
+}
+
+.git-diagram-track {
+  stroke: #4f8cc9;
+  stroke-width: 3;
+}
+
+.git-arrow {
+  stroke: #79c0ff;
+  stroke-width: 3;
+}
+
+.git-arrow-head {
+  fill: #79c0ff;
+}
+
+.git-node {
+  fill: #1f6feb;
+  stroke: #9ecbff;
+  stroke-width: 2;
+}
+
+.git-node-merge {
+  fill: #7c3aed;
+  stroke: #c4b5fd;
+  stroke-width: 2;
+}
+
+.git-merge-line {
+  stroke: #9ecbff;
+  stroke-width: 3;
+}
+
+.diagram--merge {
+  margin-top: 1rem;
+}
+
+/* ── Tag ── */
+.tag {
+  background-color: var(--color-tag);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15em 0.55em;
+  border-radius: 20px;
+  vertical-align: middle;
+}
+
+.tag--preview {
+  background-color: #7c3aed;
+}
+
+.vscode-note {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .workflow-split {
+    grid-template-columns: 1fr;
+  }
+
+  code {
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody td {
+    display: block;
+    padding: 0.3rem 0.5rem;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--color-border);
+    display: block;
+    padding: 0.5rem 0;
+  }
+}

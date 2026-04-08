@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  padding: 1em;
+}
+
+header {
+  background-color: rgb(96, 14, 64);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Comic Sans MS", monospace;
+}
+
+section {
+  margin-top: 4em;
+}
+
+main {
+  width: 40ch;
+  margin: 0 auto;
+}
+
+section {
+  /* background-color: red; */
+  padding: 1em;
+  border: 3px solid black;
+  border-radius: 25px;
+
+  transition:
+    transform 250ms linear 0ms,
+    rotate 250ms linear 0ms,
+    scale 250ms linear 0ms;
+  position: relative;
+  overflow: hidden;
+}
+
+section:hover {
+  /* border: 7px solid black; */
+  /* background-color: rgb(220, 98, 174); */
+  /* color: white; */
+  /* transform: rotate(90deg) scale(1.1); */
+  rotate: 90deg;
+  scale: 1.1;
+}
+
+section:hover::after {
+  right: 0;
+}
+
+section::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 100%;
+
+  background-color: rgb(109, 26, 80);
+  z-index: -1;
+
+  transition: right 1s ease-in-out 0ms;
+}
+
+a {
+  display: inline-block;
+  transition: all 250ms ease-in-out 0s;
+}
+
+a:hover {
+  color: red;
+  transform: translateY(-3px) rotate(363deg);
+}
+
+section {
+  background-color: red;
+  animation-name: tembleque;
+  animation-duration: 100ms;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tembleque {
+  0% {
+    transform: translateX(4px);
+  }
+
+  50% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+section:hover > h2 {
+  background-color: blue;
+  animation-play-state: paused;
+}

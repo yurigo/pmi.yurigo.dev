@@ -1,0 +1,86 @@
+body {
+  font-family: monospace;
+  background-color: palevioletred;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+
+  background: #e8339a;
+  background: linear-gradient(
+    22deg,
+    rgba(232, 51, 154, 1) 0%,
+    rgba(114, 237, 83, 1) 100%
+  );
+
+  border-bottom: 0.1px solid rgb(172, 7, 68);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.281);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+/* 
+   lo de arriba ya lo sabeis,
+   podeis hacer lo que querais 
+*/
+
+body > * {
+  padding: 1em;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "a a a a a a a"
+    "b b b b b b c"
+    "d d d d d d d";
+  grid-template-rows: 100px 1fr 60px;
+}
+
+header {
+  grid-area: a;
+  background-color: rgb(179, 230, 102);
+}
+
+main {
+  grid-area: b;
+  background-color: rgb(204, 164, 244);
+}
+
+aside {
+  grid-area: c;
+  background-color: aqua;
+}
+
+footer {
+  grid-area: d;
+  background-color: rgb(236, 188, 117);
+}
+
+/* div {
+  grid-area: x;
+  background-color: red;
+} */
+
+@media (width < 600px) {
+  body {
+    grid-template-areas:
+      "a a a a"
+      "b b b b"
+      "c c c c"
+      "d d d d";
+  }
+}

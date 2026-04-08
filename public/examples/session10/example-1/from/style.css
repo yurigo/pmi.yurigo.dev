@@ -1,0 +1,152 @@
+body{
+    font-family: Figtree, monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: blue;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    color: white;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+h2 {
+    background-color: blue;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: white
+    
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+.herotext {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.heroimg img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.speakers {
+    padding: 0;
+}
+
+.speakers h2{
+    margin-bottom: 2rem;
+    
+}
+
+.gente {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.gente > div {
+    border: 1px solid grey;
+    border-radius: 6px;
+    padding: 1rem;
+    background-color: white;
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.foto img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.horario {
+    background-color: white;
+    padding-top: 3rem;
+}
+
+.tabla-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+td:first-child {
+    font-weight: bold;
+    width: 20%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer h4 {
+    margin-bottom: 0.5rem;
+}
+
+.redes {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.redes span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}

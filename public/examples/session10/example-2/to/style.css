@@ -1,0 +1,190 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-color: rgb(71, 71, 165);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 2em 7em;
+}
+
+header > img {
+  height: 50px;
+}
+
+header > nav > ul {
+  display: flex;
+  list-style: none;
+  gap: 2em;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+section > h2,
+footer > h2 {
+  background-color: rgb(237, 237, 237);
+  border: 1px solid rgb(208, 208, 208);
+  text-align: center;
+  padding-block: 0.5em;
+  font-size: 1rem;
+  color: rgb(72, 72, 72);
+  text-transform: uppercase;
+}
+
+section > h3 {
+  width: 85%;
+  padding-top: 3rem;
+  /* background-color: aqua; */
+  margin: 0 auto;
+}
+
+.content-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2em 7em;
+  gap: 3em;
+}
+
+.content-flex > img {
+  width: 50%;
+}
+
+.content-flex > div > * {
+  margin-top: 1em;
+}
+
+.content-flex > img {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/* SECTION PONENTES */
+
+.speakers > h2 {
+  text-align: center;
+}
+
+.ponente {
+  margin-top: 30px;
+
+  border: 3px solid rgb(59, 58, 58);
+  background-color: rgb(228, 219, 219);
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.ponentes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em 7em;
+  justify-content: left;
+}
+
+.ponente > img {
+  width: 300px;
+  height: 300px;
+}
+
+.ponente > .content > h3 {
+  margin-top: 20px;
+}
+
+.ponente > .content > button {
+  width: 100px;
+  height: 50px;
+  margin: 30px;
+}
+
+/* HORARIO */
+
+.agenda {
+  display: flex;
+  margin: 2em 7em;
+  border: 1px solid rgb(200, 200, 200);
+  border-bottom: none;
+}
+
+.agenda-times {
+  flex: 1;
+  border-right: 1px solid rgb(200, 200, 200);
+}
+
+.agenda-events {
+  flex: 3;
+}
+
+.agenda-times div,
+.agenda-events div {
+  padding: 1em;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(230, 230, 230);
+  padding-bottom: 3em;
+}
+
+.columns-3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  margin: 2em 7em;
+}
+
+.column {
+  flex: 1;
+}
+
+.column ul {
+  /*quitamos los estilos de la ul por defecto */
+  list-style: none;
+  padding: 0;
+
+  margin-top: 1em;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+/* .column:last-child ul {
+  flex-direction: row;
+} */
+
+ul.flex-row {
+  flex-direction: row;
+}
+
+ul li {
+  /*
+  no quiero que los li se hagan mas grandes o mas pequeños
+  quiero que se queden siempre con el tamaño del contenido
+  */
+  flex: 0 0 auto;
+}
+
+.column ul li {
+  margin-bottom: 0.5em;
+}
+
+.column a {
+  text-decoration: none;
+  color: black;
+}
+
+.column img {
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primerito formulario</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      asdf.32434
+      <h1>Mi primer formulario</h1>
+      <nav>
+        <ul>
+          <li><a href="#contacto"> Con tacto </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article id="#contacto">
+        <header>
+          <h1>Contacto</h1>
+        </header>
+
+        <form id="formularioDeContacto" action="ok.html" method="get">
+          <!-- <label for="id">contenido</label> -->
+
+          <label for="emailForm">email:</label>
+          <input id="emailForm" type="email" />
+
+          <!-- esto es válido segun la documentación -->
+          <!-- pero es mas feo que pegar a un padre -->
+          <!-- <label>
+            nombre:
+            <input id="nameForm" name="nombrecito" />
+          </label> -->
+
+          <label for="nameForm">nombre:</label>
+          <input type="text" id="nameForm" name="nombrecito" />
+
+          <label for="phoneForm">telefono:</label>
+          <input id="phoneForm" />
+
+          <label for="ageForm">edad:</label>
+          <input id="ageForm" name="edad" type="number" max="120" min="18" />
+
+          <label for="dniForm">DNI:</label>
+          <input id="dniForm" />
+
+          <label for="colorForm">Cuál es tu color favorito?</label>
+          <input id="colorForm" type="color" />
+
+          <label for="birthForm">cuando naciste?</label>
+          <input id="birthForm" type="date" />
+
+          <h2>Cuál es tu inicial favorito</h2>
+
+          <div>
+            <input id="bulbasaurForm" type="radio" name="pokemon" value="B" />
+            <label for="bulbasaurForm">bulbasaur</label>
+          </div>
+          <div>
+            <input id="squirtleForm" type="radio" name="pokemon" value="S" />
+            <label for="squirtleForm">squirtle</label>
+          </div>
+          <div>
+            <input id="charmanderForm" type="radio" name="pokemon" value="C" />
+            <label for="charmanderForm">charmander</label>
+          </div>
+
+          <h2>Selecciona los que te has encontrado:</h2>
+
+          <div>
+            <input
+              id="bulbasaurCForm"
+              type="checkbox"
+              name="pokemonC"
+              value="B"
+            />
+            <label for="bulbasaurCForm">bulbasaur</label>
+          </div>
+          <div>
+            <input
+              id="squirtleCForm"
+              type="checkbox"
+              name="pokemonC"
+              value="S"
+            />
+            <label for="squirtleCForm">squirtle</label>
+          </div>
+          <div>
+            <input
+              id="charmanderCForm"
+              type="checkbox"
+              name="pokemonC"
+              value="C"
+            />
+            <label for="charmanderCForm">charmander</label>
+          </div>
+
+          <label for="chapaForm">Cuáles son tus inquietudes?</label>
+          <!-- <input id="chapaForm" /> -->
+          <textarea id="chapaForm"></textarea>
+
+          <button type="submit">Envia los datos!</button>
+        </form>
+      </article>
+    </main>
+    <footer>Made with ❤️ with vanilla HTML.</footer>
+  </body>
+</html>
