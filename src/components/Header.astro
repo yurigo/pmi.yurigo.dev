@@ -1,5 +1,7 @@
 ---
 import Search from "./Search.astro";
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
 ---
 
 <header
@@ -29,8 +31,9 @@ import Search from "./Search.astro";
     <a
       href="/"
       class="font-bold text-lg text-indigo-600 dark:text-indigo-400 hover:text-indigo-700"
-      >PMI</a
     >
+      <Image src={logo} alt="Logo" class="h-12 w-12 md:h-16 md:w-16" />
+    </a>
     <span class="text-gray-500 dark:text-gray-400 text-sm hidden sm:inline"
       >Programación de Medios Interactivos</span
     >
