@@ -19,14 +19,25 @@ El ejemplo construido en clase se encuentra en la carpeta [`example/`](https://g
 
 **JavaScript** nació en 1995 creado por **Brendan Eich** en Netscape en solo 10 días. A pesar de su nombre, no tiene ninguna relación con Java; el nombre fue una decisión de marketing de la época.
 
-| Año  | Hito                                                                |
-| ---- | ------------------------------------------------------------------- |
-| 1995 | Brendan Eich crea JavaScript en Netscape (en 10 días)               |
-| 1996 | Microsoft lanza JScript (su versión para Internet Explorer)         |
-| 1997 | Se estandariza como **ECMAScript** (ES1) por ECMA International     |
-| 2009 | **ES5** — Arrays con `forEach`, `map`, `filter`                     |
-| 2015 | **ES6 / ES2015** — `let`, `const`, arrow functions, clases, módulos |
-| Hoy  | Se publica una nueva versión del estándar cada año                  |
+| Año   | Hito                                                                                     |
+| ----- | ---------------------------------------------------------------------------------------- |
+| Año   | Hito                                                                                     |
+| ----- | ---------------------------------------------------------------------------------------- |
+| 1995  | Brendan Eich crea JavaScript en Netscape (en 10 días)                                    |
+| 1996  | Microsoft lanza JScript (su versión para Internet Explorer)                              |
+| 1997  | Se estandariza como **ECMAScript** (ES1) por ECMA International                          |
+| 2009  | **ES5** — `forEach`, `map`, `filter`, `JSON.parse/stringify`, strict mode                |
+| 2015  | **ES6 / ES2015** — `let`, `const`, arrow functions, clases, módulos, promesas            |
+| 2016  | **ES2016** — `**` (exponentiation), `Array.prototype.includes`                           |
+| 2017  | **ES2017** — `async`/`await`, `Object.values`, `Object.entries`                          |
+| 2018  | **ES2018** — rest/spread en objetos, `Promise.finally`, mejoras de regex                 |
+| 2019  | **ES2019** — `Array.prototype.flat`, `Array.prototype.flatMap`                           |
+| 2020  | **ES2020** — `?.` (optional chaining), `??` (nullish coalescing), `BigInt`               |
+| 2021  | **ES2021** — `String.prototype.replaceAll`, `Promise.any`                                |
+| 2022  | **ES2022** — class fields, campos privados, `top-level await`, `Array.prototype.at`      |
+| 2023  | **ES2023** — `toSorted`, `toReversed`, `toSpliced`, `with`, `findLast`, `findLastIndex`  |
+| 2024  | **ES2024** — `Object.groupBy`, `Map.groupBy`, `Promise.withResolvers`                    |
+| 2025+ | Propuestas en curso (no estándar aún): `Temporal`, Pattern Matching, etc.                |
 
 👉 JavaScript es el **único lenguaje de programación nativo del navegador**  
 👉 Hoy también se ejecuta en el servidor gracias a **Node.js**  
