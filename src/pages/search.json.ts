@@ -3,12 +3,8 @@ import { getCollection } from "astro:content";
 
 function stripMarkdown(text: string): string {
   return text
-    .replace(/<!--[\s\S]*?(?:-->|$)/g, "")
-    .replace(/<script[\s\S]*?(?:<\/script>|$)/gi, "")
-    .replace(/<style[\s\S]*?(?:<\/style>|$)/gi, "")
-    .replace(/<[^>]*>/g, "")
-    .replace(/```[\s\S]*?```/g, "")
-    .replace(/`[^`]*`/g, "")
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/`[^`]*`/g, " ")
     .replace(/^#{1,6}\s+/gm, "")
     .replace(/\*\*([^*]+)\*\*/g, "$1")
     .replace(/\*([^*]+)\*/g, "$1")
@@ -16,8 +12,7 @@ function stripMarkdown(text: string): string {
     .replace(/^[-*+]\s+/gm, "")
     .replace(/^\d+\.\s+/gm, "")
     .replace(/^>\s+/gm, "")
-    .replace(/<[^>]*/g, "")
-    .replace(/\n{2,}/g, " ")
+    .replace(/[<>]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }

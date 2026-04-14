@@ -115,10 +115,10 @@
   function isMacPlatform(): boolean {
     if (
       typeof navigator !== "undefined" &&
-      // @ts-ignore - userAgentData is not yet in all TS lib types
+      // @ts-expect-error - userAgentData not yet in all TS lib types
       typeof navigator.userAgentData !== "undefined"
     ) {
-      // @ts-ignore
+      // @ts-expect-error - userAgentData not yet in all TS lib types
       return (navigator.userAgentData.platform as string)
         .toUpperCase()
         .includes("MAC");
@@ -164,8 +164,8 @@
         includeMatches: true,
         minMatchCharLength: 2,
       });
-    } catch {
-      // Search index unavailable – show empty state silently
+    } catch (err) {
+      console.warn("[Search] Failed to load search index:", err);
     }
   }
 
@@ -186,18 +186,21 @@
     return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
 
+  const SNIPPET_CONTEXT_CHARS = 30;
+  const SNIPPET_LENGTH = 150;
+
   function getSnippet(body: string, matches: readonly FuseResultMatch[]): string {
     const bodyMatch = matches.find((m) => m.key === "body");
     if (!bodyMatch || !bodyMatch.indices.length) {
       return escapeHtml(body.slice(0, 120)) + (body.length > 120 ? "…" : "");
     }
     const [start] = bodyMatch.indices[0];
-    const snippetStart = Math.max(0, start - 30);
-    const snippet = body.slice(snippetStart, snippetStart + 150);
+    const snippetStart = Math.max(0, start - SNIPPET_CONTEXT_CHARS);
+    const snippet = body.slice(snippetStart, snippetStart + SNIPPET_LENGTH);
     const adjustedIndices: Array<[number, number]> = bodyMatch.indices
       .map(([s, e]): [number, number] => [s - snippetStart, e - snippetStart])
       .filter(([s, e]) => s >= 0 && e < snippet.length);
-    return (snippetStart > 0 ? "…" : "") + highlight(snippet, adjustedIndices) + (snippetStart + 150 < body.length ? "…" : "");
+    return (snippetStart > 0 ? "…" : "") + highlight(snippet, adjustedIndices) + (snippetStart + SNIPPET_LENGTH < body.length ? "…" : "");
   }
 
   function renderResults(query: string) {
