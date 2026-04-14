@@ -32,7 +32,7 @@ commonErrors:
 
 # Sesión 14 - CSS Transitions, Transforms y Animations
 
-**Fecha:** 18 de Marzo de 2026
+<!-- **Fecha:** 18 de Marzo de 2026 -->
 
 ## Contenidos de la Sesión
 

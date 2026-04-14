@@ -31,7 +31,7 @@ commonErrors:
 
 # Sesión 16 - Git y GitHub
 
-**Fecha:** 8 de Abril de 2026
+<!-- **Fecha:** 8 de Abril de 2026 -->
 
 ## Contenidos de la Sesión
 

@@ -30,7 +30,7 @@ commonErrors:
 
 # Sesión 15 - Responsividad en Diseño Web
 
-**Fecha:** 7 de Abril de 2026
+<!-- **Fecha:** 7 de Abril de 2026 -->
 
 ## Contenidos de la Sesión
 

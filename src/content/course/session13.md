@@ -31,7 +31,7 @@ commonErrors:
 
 # Sesión 13 - CSS Positioning
 
-**Fecha:** 17 de Marzo de 2026
+<!-- **Fecha:** 17 de Marzo de 2026 -->
 
 ## Contenidos de la Sesión
 

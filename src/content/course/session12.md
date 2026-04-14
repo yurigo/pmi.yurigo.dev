@@ -28,7 +28,7 @@ commonErrors:
 
 # Sesión 12 - CSS Grid Declarativo: `grid-template-areas`
 
-**Fecha:** 11 de Marzo de 2026
+<!-- **Fecha:** 11 de Marzo de 2026 -->
 
 ## Contenidos de la Sesión
 

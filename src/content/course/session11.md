@@ -30,7 +30,7 @@ commonErrors:
 
 # Sesión 11 - Introducción a CSS Grid
 
-**Fecha:** 10 de Marzo de 2026
+<!-- **Fecha:** 10 de Marzo de 2026 -->
 
 ## Contenidos de la Sesión
 
