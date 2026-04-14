@@ -13,7 +13,7 @@ En esta sesión se ha introducido **JavaScript** como lenguaje de programación 
 
 El ejemplo construido en clase se encuentra en la carpeta [`example/`](https://github.com/yurigo/PMI-2526/tree/master/sessions/session17/example), con los archivos [`index.html`](https://github.com/yurigo/PMI-2526/tree/master/sessions/session17/example/index.html) e [`index.js`](https://github.com/yurigo/PMI-2526/tree/master/sessions/session17/example/index.js).
 
-    ---
+---
 
 ### 1. Historia de JavaScript
 
