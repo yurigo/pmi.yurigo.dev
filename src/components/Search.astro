@@ -115,10 +115,10 @@
   function isMacPlatform(): boolean {
     if (
       typeof navigator !== "undefined" &&
-      // @ts-ignore - userAgentData is not yet in all TS lib types
+      // @ts-expect-error - userAgentData not yet in all TS lib types
       typeof navigator.userAgentData !== "undefined"
     ) {
-      // @ts-ignore
+      // @ts-expect-error - userAgentData not yet in all TS lib types
       return (navigator.userAgentData.platform as string)
         .toUpperCase()
         .includes("MAC");
