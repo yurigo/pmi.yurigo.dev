@@ -1,4 +1,5 @@
 ---
+import Search from "./Search.astro";
 ---
 <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center justify-between">
   <div class="flex items-center gap-3">
@@ -9,6 +10,9 @@
     </button>
     <a href="/" class="font-bold text-lg text-indigo-600 dark:text-indigo-400 hover:text-indigo-700">PMI</a>
     <span class="text-gray-500 dark:text-gray-400 text-sm hidden sm:inline">Programación de Medios Interactivos</span>
+  </div>
+  <div class="flex-1 flex justify-center px-4 mx-auto">
+    <Search />
   </div>
   <div class="flex items-center gap-3">
     <a href="https://github.com/yurigo/pmi-2526" target="_blank" rel="noopener noreferrer" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200" aria-label="GitHub">

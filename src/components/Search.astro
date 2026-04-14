@@ -1,0 +1,328 @@
+---
+---
+<div id="search-container">
+  <!-- Search trigger button -->
+  <button
+    id="search-trigger"
+    aria-label="Buscar contenido (Ctrl+K)"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:border-indigo-400 dark:hover:border-indigo-500 hover:text-gray-700 dark:hover:text-gray-200 transition-colors text-sm cursor-pointer"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"/>
+    </svg>
+    <span class="hidden sm:inline">Buscar...</span>
+    <kbd class="hidden md:inline-flex items-center gap-1 px-1.5 py-0.5 text-xs border border-gray-200 dark:border-gray-600 rounded bg-gray-50 dark:bg-gray-700 font-mono" aria-label="Ctrl K">
+      <span id="search-kbd-meta">⌘</span>K
+    </kbd>
+  </button>
+
+  <!-- Modal overlay -->
+  <div
+    id="search-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Buscador de contenido"
+    class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 px-4"
+  >
+    <!-- Backdrop -->
+    <div id="search-backdrop" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+    <!-- Dialog panel -->
+    <div class="relative w-full max-w-xl bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+      <!-- Search input row -->
+      <div class="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"/>
+        </svg>
+        <label for="search-input" class="sr-only">Buscar en el curso</label>
+        <input
+          id="search-input"
+          type="search"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Buscar sesiones, conceptos..."
+          aria-label="Buscar en el curso"
+          aria-autocomplete="list"
+          aria-controls="search-results"
+          class="flex-1 bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-base"
+        />
+        <button
+          id="search-close"
+          aria-label="Cerrar buscador"
+          class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+        >
+          <kbd class="text-xs border border-gray-200 dark:border-gray-600 rounded px-1 py-0.5 font-mono">Esc</kbd>
+        </button>
+      </div>
+
+      <!-- Results list -->
+      <ul
+        id="search-results"
+        role="listbox"
+        aria-label="Resultados de búsqueda"
+        class="max-h-80 overflow-y-auto py-2 empty:hidden"
+      ></ul>
+
+      <!-- Empty state -->
+      <div id="search-empty" class="hidden px-4 py-8 text-center text-gray-400 dark:text-gray-500 text-sm">
+        No se encontraron resultados
+      </div>
+
+      <!-- Initial hint -->
+      <div id="search-hint" class="px-4 py-3 text-xs text-gray-400 dark:text-gray-500 border-t border-gray-100 dark:border-gray-800 flex justify-between">
+        <span>↑↓ para navegar &nbsp; ↵ para abrir &nbsp; Esc para cerrar</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Fuse from "fuse.js";
+
+  interface SearchEntry {
+    slug: string;
+    title: string;
+    section: string;
+    description: string;
+    body: string;
+  }
+
+  interface FuseResultMatch {
+    key?: string;
+    value?: string;
+    indices: ReadonlyArray<[number, number]>;
+  }
+
+  let fuse: Fuse<SearchEntry> | null = null;
+  let allEntries: SearchEntry[] = [];
+  let activeIndex = -1;
+
+  const modal = document.getElementById("search-modal")!;
+  const input = document.getElementById("search-input") as HTMLInputElement;
+  const results = document.getElementById("search-results")!;
+  const emptyState = document.getElementById("search-empty")!;
+  const hint = document.getElementById("search-hint")!;
+  const trigger = document.getElementById("search-trigger")!;
+  const closeBtn = document.getElementById("search-close")!;
+  const backdrop = document.getElementById("search-backdrop")!;
+  const kbdMeta = document.getElementById("search-kbd-meta")!;
+
+  // Show correct meta key
+  function isMacPlatform(): boolean {
+    if (
+      typeof navigator !== "undefined" &&
+      // @ts-expect-error - userAgentData not yet in all TS lib types
+      typeof navigator.userAgentData !== "undefined"
+    ) {
+      // @ts-expect-error - userAgentData not yet in all TS lib types
+      return (navigator.userAgentData.platform as string)
+        .toUpperCase()
+        .includes("MAC");
+    }
+    return navigator.platform.toUpperCase().includes("MAC");
+  }
+  const isMac = isMacPlatform();
+  kbdMeta.textContent = isMac ? "⌘" : "Ctrl+";
+
+  function openModal() {
+    modal.classList.remove("hidden");
+    trigger.setAttribute("aria-expanded", "true");
+    input.focus();
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    trigger.setAttribute("aria-expanded", "false");
+    input.value = "";
+    results.innerHTML = "";
+    emptyState.classList.add("hidden");
+    hint.classList.remove("hidden");
+    activeIndex = -1;
+    document.body.style.overflow = "";
+  }
+
+  async function loadIndex() {
+    if (fuse) return;
+    try {
+      const res = await fetch("/search.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      allEntries = await res.json() as SearchEntry[];
+      fuse = new Fuse(allEntries, {
+        keys: [
+          { name: "title", weight: 0.5 },
+          { name: "section", weight: 0.1 },
+          { name: "description", weight: 0.2 },
+          { name: "body", weight: 0.2 },
+        ],
+        threshold: 0.35,
+        includeScore: true,
+        includeMatches: true,
+        minMatchCharLength: 2,
+      });
+    } catch (err) {
+      console.warn("[Search] Failed to load search index:", err);
+    }
+  }
+
+  function highlight(text: string, indices: ReadonlyArray<[number, number]>): string {
+    if (!indices.length) return escapeHtml(text);
+    let result = "";
+    let lastEnd = 0;
+    for (const [start, end] of indices) {
+      result += escapeHtml(text.slice(lastEnd, start));
+      result += `<mark class="bg-yellow-200 dark:bg-yellow-700/60 text-inherit rounded-sm px-0.5">${escapeHtml(text.slice(start, end + 1))}</mark>`;
+      lastEnd = end + 1;
+    }
+    result += escapeHtml(text.slice(lastEnd));
+    return result;
+  }
+
+  function escapeHtml(str: string): string {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  const SNIPPET_CONTEXT_CHARS = 30;
+  const SNIPPET_LENGTH = 150;
+
+  function getSnippet(body: string, matches: readonly FuseResultMatch[]): string {
+    const bodyMatch = matches.find((m) => m.key === "body");
+    if (!bodyMatch || !bodyMatch.indices.length) {
+      return escapeHtml(body.slice(0, 120)) + (body.length > 120 ? "…" : "");
+    }
+    const [start] = bodyMatch.indices[0];
+    const snippetStart = Math.max(0, start - SNIPPET_CONTEXT_CHARS);
+    const snippet = body.slice(snippetStart, snippetStart + SNIPPET_LENGTH);
+    const adjustedIndices: Array<[number, number]> = bodyMatch.indices
+      .map(([s, e]): [number, number] => [s - snippetStart, e - snippetStart])
+      .filter(([s, e]) => s >= 0 && e < snippet.length);
+    return (snippetStart > 0 ? "…" : "") + highlight(snippet, adjustedIndices) + (snippetStart + SNIPPET_LENGTH < body.length ? "…" : "");
+  }
+
+  function renderResults(query: string) {
+    activeIndex = -1;
+    results.innerHTML = "";
+
+    if (!query.trim() || !fuse) {
+      emptyState.classList.add("hidden");
+      hint.classList.remove("hidden");
+      return;
+    }
+
+    const fuseResults = fuse.search(query, { limit: 8 });
+
+    if (fuseResults.length === 0) {
+      emptyState.classList.remove("hidden");
+      hint.classList.add("hidden");
+      return;
+    }
+
+    emptyState.classList.add("hidden");
+    hint.classList.remove("hidden");
+
+    fuseResults.forEach(({ item, matches = [] }, i) => {
+      const titleMatch = matches.find((m) => m.key === "title");
+      const highlightedTitle = titleMatch
+        ? highlight(item.title, titleMatch.indices)
+        : escapeHtml(item.title);
+
+      const snippet = getSnippet(item.body, matches as FuseResultMatch[]);
+
+      const li = document.createElement("li");
+      li.setAttribute("role", "option");
+      li.setAttribute("aria-selected", "false");
+      li.setAttribute("data-index", String(i));
+      li.className =
+        "flex flex-col px-4 py-3 cursor-pointer hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors border-b border-gray-100 dark:border-gray-800 last:border-0";
+
+      li.innerHTML = `
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-medium text-indigo-600 dark:text-indigo-400 uppercase shrink-0">${escapeHtml(item.section)}</span>
+          <span class="font-medium text-gray-900 dark:text-gray-100 text-sm leading-snug">${highlightedTitle}</span>
+        </div>
+        ${item.description ? `<span class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${escapeHtml(item.description)}</span>` : ""}
+        ${snippet ? `<span class="text-xs text-gray-400 dark:text-gray-500 mt-1 line-clamp-2">${snippet}</span>` : ""}
+      `;
+
+      li.addEventListener("click", () => {
+        window.location.href = `/course/${item.slug}`;
+        closeModal();
+      });
+
+      li.addEventListener("mouseenter", () => {
+        setActive(i);
+      });
+
+      results.appendChild(li);
+    });
+  }
+
+  function setActive(index: number) {
+    const items = results.querySelectorAll<HTMLElement>("[role='option']");
+    items.forEach((el, i) => {
+      const active = i === index;
+      el.setAttribute("aria-selected", active ? "true" : "false");
+      el.classList.toggle("bg-indigo-50", active);
+      el.classList.toggle("dark:bg-indigo-900/20", active);
+    });
+    activeIndex = index;
+    if (index >= 0 && items[index]) {
+      items[index].scrollIntoView({ block: "nearest" });
+    }
+  }
+
+  // Event listeners
+  trigger.addEventListener("click", async () => {
+    await loadIndex();
+    openModal();
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  input.addEventListener("input", () => {
+    renderResults(input.value);
+  });
+
+  input.addEventListener("keydown", (e) => {
+    const items = results.querySelectorAll<HTMLElement>("[role='option']");
+    const count = items.length;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (count > 0) setActive(Math.min(activeIndex + 1, count - 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (count > 0) setActive(Math.max(activeIndex - 1, 0));
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      if (activeIndex >= 0 && items[activeIndex]) {
+        (items[activeIndex] as HTMLElement).click();
+      } else if (count > 0) {
+        (items[0] as HTMLElement).click();
+      }
+    } else if (e.key === "Escape") {
+      closeModal();
+    }
+  });
+
+  // Global keyboard shortcut Cmd+K / Ctrl+K
+  document.addEventListener("keydown", async (e) => {
+    if ((isMac ? e.metaKey : e.ctrlKey) && e.key === "k") {
+      e.preventDefault();
+      await loadIndex();
+      if (modal.classList.contains("hidden")) {
+        openModal();
+      } else {
+        input.focus();
+      }
+    }
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+</script>
