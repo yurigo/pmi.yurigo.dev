@@ -1,6 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
 import DocsLayout from '../../layouts/DocsLayout.astro';
+import LearningObjectives from '../../components/LearningObjectives.astro';
+import Exercises from '../../components/Exercises.astro';
+import Checklist from '../../components/Checklist.astro';
+import Callout from '../../components/Callout.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('course');
@@ -12,9 +16,27 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const { objectives, exercises, checklist, commonErrors, duration } = entry.data;
 ---
 <DocsLayout title={entry.data.title} entry={entry}>
   <article class="prose dark:prose-invert max-w-none">
+    {duration && (
+      <p class="not-prose mb-4 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+        <span aria-hidden="true">⏱️</span> Duración estimada: <strong class="text-gray-700 dark:text-gray-300">{duration} {duration === 1 ? 'hora' : 'horas'}</strong>
+      </p>
+    )}
+    {objectives && objectives.length > 0 && (
+      <LearningObjectives objectives={objectives} />
+    )}
     <Content />
+    {exercises && exercises.length > 0 && (
+      <Exercises exercises={exercises} />
+    )}
+    {commonErrors && commonErrors.length > 0 && (
+      <Callout type="error" items={commonErrors} />
+    )}
+    {checklist && checklist.length > 0 && (
+      <Checklist items={checklist} />
+    )}
   </article>
 </DocsLayout>

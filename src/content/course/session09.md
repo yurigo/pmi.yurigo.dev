@@ -3,6 +3,29 @@ title: "Sesión 09 - Actividad de Maquetación con Flexbox"
 section: "CSS"
 order: 9
 description: "Práctica de maquetación: flex-grow, flex-basis, flex-shrink y :hover"
+duration: 3
+objectives:
+  - "Aplicar flex-grow para que los ítems ocupen el espacio disponible de forma proporcional"
+  - "Usar flex-basis para definir el tamaño base de un ítem antes de la distribución"
+  - "Controlar el encogimiento de ítems con flex-shrink"
+  - "Usar la propiedad shorthand flex: grow shrink basis"
+  - "Añadir interactividad visual con la pseudo-clase :hover"
+exercises:
+  - title: "Landing page de evento"
+    description: "Construye la landing page de un evento tecnológico real (MWC, Google I/O u otro) con secciones hero, características y footer, usando exclusivamente Flexbox para el layout."
+  - title: "Menú con hover"
+    description: "Crea un menú de navegación donde cada enlace cambia de color y fondo al hacer hover, usando transiciones suaves."
+checklist:
+  - "Entiendo cómo funciona flex-grow y para qué sirve"
+  - "Sé usar flex: 1 como forma compacta de flex-grow: 1 flex-shrink: 1 flex-basis: 0"
+  - "Puedo diseñar un layout completo de página usando solo Flexbox"
+  - "Sé aplicar estilos al hover con la pseudo-clase :hover"
+  - "Comprendo cómo flex-basis afecta al tamaño antes de crecer o encoger"
+commonErrors:
+  - "Usar flex-grow en el contenedor en lugar de en los ítems hijos"
+  - "Olvidar que flex: 1 equivale a flex: 1 1 0 (basis 0, no auto)"
+  - "Usar :hover en el contenedor cuando se quiere afectar solo al elemento señalado"
+  - "No definir un flex-basis y luego esperar un comportamiento predecible con flex-grow"
 ---
 
 # Sesión 09 - Actividad de Maquetación con Flexbox

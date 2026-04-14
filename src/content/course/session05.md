@@ -3,6 +3,29 @@ title: "Sesión 05 - Formularios HTML"
 section: "HTML"
 order: 5
 description: "Formularios, inputs, validación y elementos de formulario"
+duration: 2
+objectives:
+  - "Crear formularios HTML con la etiqueta <form> y sus atributos action y method"
+  - "Usar los distintos tipos de <input>: text, email, password, number, checkbox, radio, file"
+  - "Añadir etiquetas <label> correctamente asociadas a sus campos"
+  - "Aplicar validación nativa del navegador con atributos required, min, max y pattern"
+  - "Utilizar <select>, <textarea> y <button> dentro de un formulario"
+exercises:
+  - title: "Formulario de registro"
+    description: "Diseña un formulario de registro con campos para nombre, email, contraseña, fecha de nacimiento y un checkbox de aceptación de términos. Todos los campos son obligatorios."
+  - title: "Formulario de encuesta"
+    description: "Crea una encuesta de satisfacción con preguntas de tipo radio, checkboxes y un textarea para comentarios adicionales."
+checklist:
+  - "Sé crear un formulario básico con <form>, <input> y <button>"
+  - "Asocio correctamente cada <label> con su campo mediante el atributo for/id"
+  - "Conozco los tipos de input más comunes (text, email, password, checkbox, radio)"
+  - "Sé añadir validación básica con required, minlength y type"
+  - "Entiendo la diferencia entre method=GET y method=POST"
+commonErrors:
+  - "Olvidar asociar el <label> al input con for='id-del-input'"
+  - "No incluir un <button type='submit'> dentro del formulario"
+  - "Usar <input type='text'> en lugar de <input type='email'> para emails (se pierde la validación)"
+  - "Olvidar poner el atributo name en el input (sin name el campo no se envía al servidor)"
 ---
 
 # Sesión 05 - Formularios HTML

@@ -3,6 +3,29 @@ title: "Sesión 01 - Introducción a Web"
 section: "HTML"
 order: 1
 description: "Introducción a la asignatura, HTML básico y herramientas"
+duration: 2
+objectives:
+  - "Comprender la arquitectura cliente-servidor y cómo funciona la web"
+  - "Instalar y configurar Visual Studio Code con las extensiones básicas"
+  - "Crear y visualizar una página HTML básica con Live Server"
+  - "Conocer la estructura mínima de un documento HTML5"
+  - "Utilizar etiquetas fundamentales: h1–h6, p, a"
+exercises:
+  - title: "Página personal"
+    description: "Crea una página HTML con tu nombre, una breve descripción y al menos tres etiquetas de encabezado organizadas jerárquicamente."
+  - title: "Currículum Vitae en HTML"
+    description: "Construye un CV básico con secciones de experiencia, educación y contacto usando únicamente etiquetas HTML estructurales."
+checklist:
+  - "Entiendo qué es HTML y para qué sirve"
+  - "Sé crear un archivo index.html con la estructura básica (DOCTYPE, html, head, body)"
+  - "Puedo abrir un proyecto con Live Server en VS Code"
+  - "Sé usar etiquetas de encabezado (h1–h6) y párrafos (p)"
+  - "Comprendo el concepto de arquitectura cliente-servidor"
+commonErrors:
+  - "Olvidar el <!DOCTYPE html> al inicio del documento"
+  - "No cerrar etiquetas como </p> o </h1>"
+  - "Confundir la carpeta del proyecto con la ubicación del archivo al usar Live Server"
+  - "Usar varias etiquetas <h1> en la misma página (solo debe haber una)"
 ---
 
 # Sesión 01 - Introducción a Web

@@ -3,6 +3,29 @@ title: "Sesión 04 - Introducción a CSS"
 section: "CSS"
 order: 4
 description: "Selectores, propiedades y formas de incluir CSS"
+duration: 2
+objectives:
+  - "Entender qué es CSS y cómo se relaciona con HTML"
+  - "Conocer las tres formas de incluir CSS: inline, interno y externo"
+  - "Aplicar estilos usando selectores de etiqueta, clase e id"
+  - "Usar propiedades básicas: color, background-color, font-size, font-family, margin, padding"
+  - "Comprender la cascada y la especificidad en CSS"
+exercises:
+  - title: "Estilizar el CV"
+    description: "Aplica estilos a la página de CV creada en la sesión 01: cambia colores, tipografía y añade separación entre secciones."
+  - title: "Hoja de estilos externa"
+    description: "Extrae todos los estilos inline de una página HTML existente a un archivo style.css externo y enlázalo correctamente."
+checklist:
+  - "Sé enlazar una hoja de estilos externa con <link>"
+  - "Puedo usar selectores de etiqueta, clase (.clase) e id (#id)"
+  - "Entiendo la diferencia entre margin y padding"
+  - "Comprendo cómo funciona la cascada: a igual especificidad, gana el último estilo"
+  - "Sé aplicar colores con nombre, hex y rgb"
+commonErrors:
+  - "Olvidar el punto (.) antes de un nombre de clase en el CSS: .mi-clase"
+  - "Olvidar la almohadilla (#) antes de un id: #mi-id"
+  - "Confundir margin (espacio externo) con padding (espacio interno)"
+  - "Poner el <link> a la hoja de estilos en el <body> en lugar del <head>"
 ---
 
 # Sesión 04 - Introducción a CSS

@@ -1,0 +1,20 @@
+---
+interface Props {
+  objectives: string[];
+}
+const { objectives } = Astro.props;
+---
+
+<section class="not-prose my-6 rounded-xl border border-indigo-200 bg-indigo-50 p-5 dark:border-indigo-800 dark:bg-indigo-950/40">
+  <h2 class="mb-3 flex items-center gap-2 text-lg font-bold text-indigo-700 dark:text-indigo-300">
+    <span aria-hidden="true">🎯</span> Objetivos de aprendizaje
+  </h2>
+  <ul class="space-y-1.5">
+    {objectives.map((obj) => (
+      <li class="flex items-start gap-2 text-indigo-900 dark:text-indigo-200">
+        <span class="mt-0.5 text-indigo-500 dark:text-indigo-400" aria-hidden="true">▸</span>
+        <span>{obj}</span>
+      </li>
+    ))}
+  </ul>
+</section>

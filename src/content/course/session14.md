@@ -3,6 +3,31 @@ title: "Sesión 14 - CSS Transitions, Transforms y Animations"
 section: "CSS"
 order: 14
 description: "Animaciones y transformaciones en CSS"
+duration: 2
+objectives:
+  - "Aplicar transition para animar cambios de estado de forma suave"
+  - "Usar transform para trasladar, rotar, escalar y sesgar elementos"
+  - "Crear animaciones complejas con @keyframes y animation"
+  - "Combinar transform y transition para interacciones de hover elegantes"
+  - "Entender las propiedades de timing: duration, delay y timing-function"
+exercises:
+  - title: "Tarjeta con flip"
+    description: "Crea una tarjeta que gire 180° al hacer hover, mostrando la cara trasera con información adicional, usando transform y transition."
+  - title: "Animación de carga"
+    description: "Diseña un spinner de carga animado con @keyframes que rote indefinidamente."
+  - title: "Botón con efectos"
+    description: "Crea un botón que al hacer hover se agrande ligeramente (scale), cambie de color y muestre una sombra, todo con transiciones suaves."
+checklist:
+  - "Sé añadir transiciones con transition: property duration timing-function"
+  - "Puedo usar transform: translate(), rotate(), scale() y skew()"
+  - "Entiendo cómo crear animaciones personalizadas con @keyframes"
+  - "Sé encadenar múltiples transforms en una misma propiedad"
+  - "Conozco las funciones de timing: ease, linear, ease-in-out, cubic-bezier"
+commonErrors:
+  - "Poner transition en el selector :hover en lugar de en el elemento base (la transición solo funciona en un sentido)"
+  - "Animar propiedades costosas como width o height en lugar de transform y opacity"
+  - "Olvidar añadir transform-origin cuando se quiere rotar respecto a un punto específico"
+  - "Confundir animation-duration con transition-duration: son propiedades distintas"
 ---
 
 # Sesión 14 - CSS Transitions, Transforms y Animations

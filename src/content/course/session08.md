@@ -3,6 +3,31 @@ title: "Sesión 08 - CSS Flexbox"
 section: "CSS"
 order: 8
 description: "Modelo de diseño flexible para layouts modernos"
+duration: 2
+objectives:
+  - "Activar Flexbox en un contenedor con display: flex"
+  - "Controlar la dirección y el ajuste de los ítems con flex-direction y flex-wrap"
+  - "Alinear ítems en el eje principal con justify-content"
+  - "Alinear ítems en el eje cruzado con align-items y align-self"
+  - "Distribuir espacio con gap entre elementos flex"
+exercises:
+  - title: "Barra de navegación"
+    description: "Crea una barra de navegación horizontal con el logo a la izquierda, los enlaces centrados y un botón a la derecha usando solo Flexbox."
+  - title: "Centrado perfecto"
+    description: "Centra un elemento tanto horizontal como verticalmente dentro de un contenedor de altura definida, usando Flexbox."
+  - title: "Grid de tarjetas"
+    description: "Diseña una fila de tarjetas de producto que se distribuyan equitativamente y se envuelvan en pantallas pequeñas con flex-wrap."
+checklist:
+  - "Sé activar Flexbox con display: flex"
+  - "Entiendo la diferencia entre eje principal y eje cruzado"
+  - "Puedo centrar elementos con justify-content: center y align-items: center"
+  - "Sé usar gap para espaciar ítems sin usar márgenes individuales"
+  - "Conozco flex-direction: row y flex-direction: column y cuándo usarlos"
+commonErrors:
+  - "Aplicar propiedades de ítems (align-self, flex-grow) al contenedor en lugar de a los hijos"
+  - "Confundir justify-content (eje principal) con align-items (eje cruzado)"
+  - "Olvidar que flex-direction: column cambia cuál es el eje principal"
+  - "No usar flex-wrap: wrap cuando se quiere que los ítems pasen a la línea siguiente"
 ---
 
 # Sesión 08 - CSS Flexbox

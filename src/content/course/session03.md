@@ -3,6 +3,27 @@ title: "Sesión 03 - HTML5 Semántico"
 section: "HTML"
 order: 3
 description: "Elementos semánticos, atributos id/class, block vs inline"
+duration: 2
+objectives:
+  - "Distinguir entre elementos de bloque e inline y cuándo usar cada uno"
+  - "Utilizar etiquetas semánticas de HTML5: header, main, section, article, footer, nav, aside"
+  - "Aplicar atributos id y class para identificar y agrupar elementos"
+  - "Comprender la importancia del HTML semántico para accesibilidad y SEO"
+exercises:
+  - title: "Maqueta semántica"
+    description: "Reconstruye la estructura de una página web real (por ejemplo la de tu escuela) usando únicamente etiquetas semánticas HTML5 y sin nada de CSS."
+  - title: "Refactorización"
+    description: "Toma una página HTML que use solo <div> y <span> y sustitúyela por etiquetas semánticas apropiadas."
+checklist:
+  - "Sé diferenciar block e inline y cómo afecta al layout"
+  - "Uso header, main, section, article, footer, nav y aside correctamente"
+  - "Entiendo para qué sirven los atributos id y class"
+  - "Comprendo por qué el HTML semántico es importante para accesibilidad y SEO"
+commonErrors:
+  - "Usar <div> para todo en lugar de elegir la etiqueta semántica correcta"
+  - "Poner elementos de bloque (como <p>) dentro de elementos inline (como <span>)"
+  - "Asignar el mismo id a varios elementos (los ids deben ser únicos)"
+  - "Confundir <section> y <article>: <article> es contenido independiente, <section> agrupa temáticamente"
 ---
 
 # Sesión 03 - HTML5 Semántico

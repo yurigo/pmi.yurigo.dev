@@ -3,6 +3,27 @@ title: "Sesión 12 - CSS Grid Declarativo: grid-template-areas"
 section: "CSS"
 order: 12
 description: "Enfoque declarativo de CSS Grid con grid-template-areas y grid-area"
+duration: 2
+objectives:
+  - "Definir zonas nombradas de un layout con grid-template-areas"
+  - "Asignar ítems a zonas con la propiedad grid-area"
+  - "Crear layouts semánticos y fáciles de mantener con este enfoque declarativo"
+  - "Cambiar el layout fácilmente reescribiendo solo grid-template-areas"
+exercises:
+  - title: "Layout tipo dashboard"
+    description: "Diseña un dashboard con sidebar, header, main y footer usando grid-template-areas. El sidebar y el footer deben tener ancho/alto fijos."
+  - title: "Layout responsivo con áreas"
+    description: "Adapta el layout del ejercicio anterior para que en pantallas pequeñas el sidebar pase a estar debajo del main, cambiando solo grid-template-areas en un media query."
+checklist:
+  - "Sé escribir la sintaxis de grid-template-areas con cadenas de texto"
+  - "Puedo asignar ítems a áreas con grid-area: nombre-del-area"
+  - "Entiendo que un punto (.) en grid-template-areas representa una celda vacía"
+  - "Sé cambiar el layout completo reescribiendo grid-template-areas en un media query"
+commonErrors:
+  - "Poner grid-area en el contenedor en lugar de en los ítems hijos"
+  - "Olvidar que las filas de grid-template-areas deben tener el mismo número de columnas"
+  - "Usar nombres de área con caracteres especiales o espacios (solo letras, números y guiones)"
+  - "No definir el número de columnas con grid-template-columns junto con grid-template-areas"
 ---
 
 # Sesión 12 - CSS Grid Declarativo: `grid-template-areas`

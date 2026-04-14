@@ -3,6 +3,29 @@ title: "Sesión 15 - Responsividad en Diseño Web"
 section: "CSS"
 order: 15
 description: "Diseño web responsivo: media queries, mobile-first y desktop-first"
+duration: 2
+objectives:
+  - "Comprender qué es el diseño responsivo y por qué es fundamental"
+  - "Usar media queries (@media) para aplicar estilos según el tamaño del viewport"
+  - "Diferenciar los enfoques mobile-first y desktop-first"
+  - "Aplicar unidades relativas (em, rem, %) para tamaños adaptables"
+  - "Probar diseños responsivos con las DevTools del navegador"
+exercises:
+  - title: "Página mobile-first"
+    description: "Rediseña una de las páginas creadas en sesiones anteriores con enfoque mobile-first: empieza con estilos para móvil y añade media queries para pantallas más grandes."
+  - title: "Menú hamburguesa"
+    description: "Crea un menú de navegación que en móvil muestre un icono hamburguesa y en desktop muestre los enlaces horizontalmente."
+checklist:
+  - "Entiendo la diferencia entre diseño responsivo y adaptativo"
+  - "Sé escribir media queries con min-width (mobile-first) y max-width (desktop-first)"
+  - "Puedo usar rem y em en lugar de px para tamaños de fuente escalables"
+  - "Sé emular diferentes dispositivos con las DevTools del navegador"
+  - "Conozco los breakpoints más comunes (640px, 768px, 1024px, 1280px)"
+commonErrors:
+  - "Olvidar añadir <meta name='viewport'> en el <head> (sin esto los media queries no funcionan en móvil)"
+  - "Usar max-width cuando se quiere mobile-first o min-width cuando se quiere desktop-first"
+  - "Definir tamaños en px en lugar de rem, lo que dificulta la escalabilidad"
+  - "No probar en dispositivos reales o en el simulador de DevTools"
 ---
 
 # Sesión 15 - Responsividad en Diseño Web

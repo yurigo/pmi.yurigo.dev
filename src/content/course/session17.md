@@ -3,6 +3,34 @@ title: "Sesión 17 - Introducción a JavaScript"
 section: "JavaScript"
 order: 17
 description: "Introducción al lenguaje de programación JavaScript, tipos de datos, operadores, variables, estructuras de control y funciones"
+duration: 2
+objectives:
+  - "Entender el papel de JavaScript en la web: interactividad y manipulación del DOM"
+  - "Declarar variables con let y const y conocer sus diferencias con var"
+  - "Manejar los tipos de datos primitivos: string, number, boolean, null y undefined"
+  - "Usar operadores aritméticos, de comparación y lógicos"
+  - "Escribir estructuras de control: if/else, for y while"
+  - "Definir y llamar funciones con parámetros y valor de retorno"
+exercises:
+  - title: "Calculadora básica"
+    description: "Crea una función que reciba dos números y un operador (+, -, *, /) y devuelva el resultado de la operación. Pruébala con al menos cinco llamadas distintas en la consola."
+  - title: "FizzBuzz"
+    description: "Escribe un bucle que recorra los números del 1 al 100. Para múltiplos de 3 muestra 'Fizz', para múltiplos de 5 muestra 'Buzz' y para múltiplos de ambos 'FizzBuzz'."
+  - title: "Interacción en el DOM"
+    description: "Añade un botón a una página HTML. Con JavaScript, haz que al hacer clic el texto del botón cambie y se añada una clase CSS de color diferente."
+checklist:
+  - "Sé declarar variables con let y const y entiendo cuándo usar cada una"
+  - "Conozco los tipos primitivos de JavaScript y cómo comprobar el tipo con typeof"
+  - "Puedo escribir condicionales con if, else if y else"
+  - "Sé recorrer rangos con bucles for y while"
+  - "Puedo definir y llamar funciones con parámetros y return"
+  - "Sé seleccionar un elemento del DOM con document.querySelector y modificar su contenido"
+commonErrors:
+  - "Usar == en lugar de === (el operador de igualdad estricta evita conversiones de tipo implícitas)"
+  - "Declarar variables con var cuando let o const son más seguros y predecibles"
+  - "Olvidar que const no significa que el valor sea inmutable en objetos y arrays"
+  - "Llamar a una función antes de declararla cuando se usa una función expresión (const fn = () => {})"
+  - "No añadir el atributo defer al <script> y que el JavaScript se ejecute antes de que el DOM esté listo"
 ---
 
 # Sesión 17 - Introducción a JavaScript
