@@ -1,23 +1,93 @@
 ---
 import DocsLayout from '../layouts/DocsLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureList from '../components/FeatureList.astro';
+import CTASection from '../components/CTASection.astro';
 import { getCollection } from 'astro:content';
 
 const entries = await getCollection('course');
 const sorted = entries.sort((a, b) => a.data.order - b.data.order);
+
+const sections: Record<string, typeof sorted> = {};
+for (const e of sorted) {
+  if (!sections[e.data.section]) sections[e.data.section] = [];
+  sections[e.data.section].push(e);
+}
+
+const learningFeatures = [
+  { icon: '🌐', title: 'HTML semántico', description: 'Estructura documentos web con etiquetas estándar y accesibles.' },
+  { icon: '🎨', title: 'CSS moderno', description: 'Maqueta con Flexbox, Grid y diseño responsive (mobile-first).' },
+  { icon: '⚡', title: 'JavaScript', description: 'Añade interactividad, manipula el DOM y consume APIs.' },
+  { icon: '🛠️', title: 'Herramientas reales', description: 'VS Code, Git, Live Server y flujos de trabajo profesionales.' },
+  { icon: '📦', title: 'Proyectos prácticos', description: 'Aplica los conocimientos en ejercicios y proyectos de cada sesión.' },
+  { icon: '🚀', title: 'Fundamentos sólidos', description: 'Base para frameworks modernos como React, Vue o Astro.' },
+];
+
+const howToFeatures = [
+  { icon: '📖', title: 'Sigue el índice', description: 'Las sesiones están ordenadas de forma progresiva. Avanza a tu ritmo.' },
+  { icon: '💡', title: 'Lee y practica', description: 'Cada sesión tiene teoría, ejemplos interactivos y recursos adicionales.' },
+  { icon: '🔄', title: 'Navega con facilidad', description: 'Usa los botones "Anterior" y "Siguiente" para moverte entre sesiones.' },
+];
 ---
 <DocsLayout title="Inicio">
-  <div class="prose dark:prose-invert max-w-none">
-    <h1>Programación de Medios Interactivos</h1>
-    <p class="lead">Bienvenido al sitio de documentación del curso PMI. Aquí encontrarás los apuntes y materiales de cada sesión.</p>
-    <p>Este curso cubre los fundamentos del desarrollo web moderno: HTML, CSS y JavaScript.</p>
-    <div class="not-prose mt-8 grid gap-4 sm:grid-cols-2">
-      {sorted.map(entry => (
-        <a href={`/course/${entry.slug}`} class="block p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
-          <div class="text-xs font-medium text-indigo-600 dark:text-indigo-400 uppercase mb-1">{entry.data.section}</div>
-          <div class="font-semibold text-gray-900 dark:text-gray-100">{entry.data.title}</div>
-          {entry.data.description && <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">{entry.data.description}</div>}
-        </a>
+  <!-- Hero -->
+  <Hero
+    title="Programación de Medios Interactivos"
+    description="Aprende a construir aplicaciones web modernas desde cero: HTML, CSS y JavaScript con ejemplos prácticos en cada sesión."
+    ctas={[
+      { label: 'Empezar curso', href: `/course/${sorted[0]?.slug}`, primary: true },
+      { label: 'Ver índice', href: '/course' },
+    ]}
+  />
+
+  <!-- Qué aprenderás -->
+  <FeatureList
+    heading="¿Qué aprenderás?"
+    features={learningFeatures}
+  />
+
+  <!-- Cómo usar este curso -->
+  <FeatureList
+    heading="¿Cómo usar este curso?"
+    features={howToFeatures}
+  />
+
+  <!-- CTA intermedio -->
+  <CTASection
+    heading="¿Listo para empezar?"
+    description="Comienza desde la primera sesión o explora el índice completo."
+    ctas={[
+      { label: 'Empezar curso', href: `/course/${sorted[0]?.slug}`, primary: true },
+      { label: 'Ver índice', href: '/course' },
+    ]}
+  />
+
+  <!-- Índice de sesiones -->
+  <section class="py-12 px-4" id="sesiones">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        Índice de sesiones
+      </h2>
+      {Object.entries(sections).map(([section, items]) => (
+        <div class="mb-8">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-3">
+            {section}
+          </h3>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {items.map(entry => (
+              <a
+                href={`/course/${entry.slug}`}
+                class="block p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 hover:shadow-sm transition-all bg-white dark:bg-gray-800"
+              >
+                <div class="font-semibold text-gray-900 dark:text-gray-100">{entry.data.title}</div>
+                {entry.data.description && (
+                  <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">{entry.data.description}</div>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
-  </div>
+  </section>
 </DocsLayout>
