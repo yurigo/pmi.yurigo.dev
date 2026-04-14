@@ -1,0 +1,40 @@
+---
+interface CTA {
+  label: string;
+  href: string;
+  primary?: boolean;
+}
+
+interface Props {
+  heading: string;
+  description?: string;
+  ctas: CTA[];
+}
+
+const { heading, description, ctas } = Astro.props;
+---
+
+<section class="py-12 px-4 bg-indigo-50 dark:bg-gray-800 rounded-2xl my-8 mx-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3">
+      {heading}
+    </h2>
+    {description && (
+      <p class="text-gray-600 dark:text-gray-300 mb-6">{description}</p>
+    )}
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      {ctas.map(cta => (
+        <a
+          href={cta.href}
+          class={
+            cta.primary
+              ? 'inline-block px-6 py-3 rounded-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors shadow-md'
+              : 'inline-block px-6 py-3 rounded-lg font-semibold text-indigo-600 dark:text-indigo-400 border-2 border-indigo-600 dark:border-indigo-400 hover:bg-indigo-100 dark:hover:bg-gray-700 transition-colors'
+          }
+        >
+          {cta.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
