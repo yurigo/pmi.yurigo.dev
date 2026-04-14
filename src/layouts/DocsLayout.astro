@@ -40,8 +40,8 @@ const sorted = allEntries.sort((a, b) => a.data.order - b.data.order);
     <!-- Scroll progress bar -->
     <div
       id="scroll-progress"
-      class="fixed top-[53px] left-0 z-40 h-0.5 bg-indigo-500 transition-all duration-75"
-      style="width: 0%"
+      class="fixed top-0 left-0 z-40 h-0.5 bg-indigo-500 transition-all duration-75"
+      style="width: 0%; top: 0px"
       aria-hidden="true"
     >
     </div>
@@ -57,15 +57,26 @@ const sorted = allEntries.sort((a, b) => a.data.order - b.data.order);
 </html>
 
 <script>
-  const bar = document.getElementById('scroll-progress');
+  const bar = document.getElementById("scroll-progress");
   if (bar) {
+    const header = document.getElementById("site-header");
+
+    const updateTop = () => {
+      const headerHeight = header?.offsetHeight ?? 0;
+      bar.style.top = `${headerHeight}px`;
+    };
+
     const update = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
       bar.style.width = `${pct}%`;
     };
-    window.addEventListener('scroll', update, { passive: true });
+
+    updateTop();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", updateTop);
     update();
   }
 </script>
