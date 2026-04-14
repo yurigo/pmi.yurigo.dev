@@ -10,6 +10,7 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
     "astro": "^5.0.0",
+    "fuse.js": "^7.3.0",
     "remark-github-alerts": "^0.1.1",
     "tailwindcss": "^3.4.0"
   },
