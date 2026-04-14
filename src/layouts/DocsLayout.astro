@@ -2,7 +2,8 @@
 import type { CollectionEntry } from "astro:content";
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
-import PrevNext from "../components/PrevNext.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import SessionNavigation from "../components/SessionNavigation.astro";
 import { getCollection } from "astro:content";
 import "../styles/github-alerts.css";
 
@@ -36,15 +37,38 @@ const sorted = allEntries.sort((a, b) => a.data.order - b.data.order);
     class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen"
   >
     <Header />
+    <!-- Scroll progress bar -->
+    <div
+      id="scroll-progress"
+      class="fixed top-[53px] left-0 z-40 h-0.5 bg-indigo-500 transition-all duration-75"
+      style="width: 0%"
+      aria-hidden="true"
+    >
+    </div>
     <div class="flex">
       <Sidebar entries={sorted} current={entry?.slug} />
       <main class="flex-1 min-w-0 px-6 py-8 max-w-4xl mx-auto">
+        {entry && <Breadcrumbs entry={entry} />}
         <slot />
-        {entry && <PrevNext entries={sorted} current={entry} />}
+        {entry && <SessionNavigation entries={sorted} current={entry} />}
       </main>
     </div>
   </body>
 </html>
+
+<script>
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    const update = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+      bar.style.width = `${pct}%`;
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+</script>
 
 <style is:global>
   .course-iframe {
