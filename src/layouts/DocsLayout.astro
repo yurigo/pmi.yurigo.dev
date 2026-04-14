@@ -38,7 +38,13 @@ const sorted = allEntries.sort((a, b) => a.data.order - b.data.order);
   >
     <Header />
     <!-- Scroll progress bar -->
-    <div id="scroll-progress" class="fixed top-[57px] left-0 z-40 h-0.5 bg-indigo-500 transition-all duration-75" style="width: 0%" aria-hidden="true"></div>
+    <div
+      id="scroll-progress"
+      class="fixed top-[53px] left-0 z-40 h-0.5 bg-indigo-500 transition-all duration-75"
+      style="width: 0%"
+      aria-hidden="true"
+    >
+    </div>
     <div class="flex">
       <Sidebar entries={sorted} current={entry?.slug} />
       <main class="flex-1 min-w-0 px-6 py-8 max-w-4xl mx-auto">
