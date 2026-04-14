@@ -3,6 +3,29 @@ title: "Sesión 10 - Corrección de la Actividad MWC"
 section: "CSS"
 order: 10
 description: "position: fixed, variables CSS, pseudo-clases y backdrop-filter"
+duration: 2
+objectives:
+  - "Usar position: fixed para elementos que permanecen visibles al hacer scroll"
+  - "Definir y consumir variables CSS (custom properties) con var()"
+  - "Aplicar pseudo-clases estructurales: :nth-child(), :first-child, :last-child"
+  - "Usar backdrop-filter para efectos visuales de desenfoque"
+  - "Entender object-fit y object-position para controlar el encuadre de imágenes"
+exercises:
+  - title: "Cabecera fija con efecto glassmorphism"
+    description: "Crea una cabecera de página con position: fixed, fondo semitransparente y backdrop-filter: blur() para conseguir efecto de cristal."
+  - title: "Sistema de variables CSS"
+    description: "Refactoriza una hoja de estilos existente definiendo una paleta de colores, tipografías y espaciados como variables CSS en :root."
+checklist:
+  - "Sé usar position: fixed y entiendo respecto a qué se posiciona"
+  - "Puedo definir variables CSS en :root y usarlas con var(--nombre)"
+  - "Sé seleccionar elementos con :nth-child() y variantes"
+  - "Entiendo cómo funciona backdrop-filter y en qué navegadores está soportado"
+  - "Controlo el recorte de imágenes con object-fit: cover y object-position"
+commonErrors:
+  - "Olvidar añadir un z-index alto al elemento con position: fixed para que quede sobre el resto"
+  - "Usar una variable CSS sin declararla previamente en :root"
+  - "Confundir :nth-child(2) con :nth-of-type(2): el primero cuenta todos los hijos, el segundo solo del mismo tipo"
+  - "Aplicar backdrop-filter sin comprobar soporte en navegadores (requiere prefijo en algunos)"
 ---
 
 # Sesión 10 - Corrección de la Actividad MWC

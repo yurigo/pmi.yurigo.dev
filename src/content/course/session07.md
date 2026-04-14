@@ -3,6 +3,28 @@ title: "Sesión 07 - CSS: border-radius, box-shadow y height"
 section: "CSS"
 order: 7
 description: "Esquinas redondeadas, sombras y unidades de altura"
+duration: 2
+objectives:
+  - "Aplicar border-radius para crear esquinas redondeadas y formas circulares"
+  - "Usar box-shadow para añadir profundidad a los elementos"
+  - "Comprender las unidades de altura: px, %, vh y min-height"
+  - "Combinar estas propiedades para crear tarjetas y componentes visuales atractivos"
+exercises:
+  - title: "Tarjeta de perfil"
+    description: "Diseña una tarjeta de perfil de usuario con imagen circular (border-radius: 50%), sombra suave y una altura mínima definida."
+  - title: "Botones estilizados"
+    description: "Crea tres variantes de botón (primario, secundario, peligro) con border-radius y box-shadow personalizados."
+checklist:
+  - "Sé usar border-radius con un único valor y con valores distintos por esquina"
+  - "Puedo crear elementos completamente circulares con border-radius: 50%"
+  - "Sé añadir sombras con box-shadow indicando desplazamiento, difuminado y color"
+  - "Entiendo la diferencia entre height, min-height y max-height"
+  - "Sé usar vh para alturas relativas al viewport"
+commonErrors:
+  - "Aplicar border-radius: 50% a un elemento que no es cuadrado (no quedará circular)"
+  - "Olvidar añadir overflow: hidden si el contenido sobresale del border-radius"
+  - "Usar height: 100% sin que el elemento padre tenga una altura definida"
+  - "Confundir la sintaxis de box-shadow con la de text-shadow"
 ---
 
 # Sesión 07 - CSS: border-radius, box-shadow y height

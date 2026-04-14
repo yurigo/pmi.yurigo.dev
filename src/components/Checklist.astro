@@ -1,0 +1,21 @@
+---
+interface Props {
+  items: string[];
+}
+const { items } = Astro.props;
+---
+
+<section class="not-prose my-6 rounded-xl border border-violet-200 bg-violet-50 p-5 dark:border-violet-800 dark:bg-violet-950/40">
+  <h2 class="mb-3 flex items-center gap-2 text-lg font-bold text-violet-700 dark:text-violet-300">
+    <span aria-hidden="true">✅</span> Checklist final
+  </h2>
+  <p class="mb-3 text-sm text-violet-600 dark:text-violet-400">Al terminar esta sesión deberías ser capaz de:</p>
+  <ul class="space-y-2">
+    {items.map((item) => (
+      <li class="flex items-start gap-2 text-violet-900 dark:text-violet-200">
+        <span class="mt-0.5 shrink-0 text-violet-500 dark:text-violet-400" aria-hidden="true">☐</span>
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+</section>

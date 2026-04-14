@@ -3,6 +3,29 @@ title: "Sesión 11 - Introducción a CSS Grid"
 section: "CSS"
 order: 11
 description: "Sistema de maquetación bidimensional con CSS Grid Layout"
+duration: 2
+objectives:
+  - "Activar CSS Grid en un contenedor con display: grid"
+  - "Definir columnas y filas con grid-template-columns y grid-template-rows"
+  - "Usar la unidad fr para distribuciones proporcionales"
+  - "Colocar ítems en celdas específicas con grid-column y grid-row"
+  - "Entender la diferencia entre Grid y Flexbox y cuándo usar cada uno"
+exercises:
+  - title: "Layout de revista"
+    description: "Diseña la portada de una revista con CSS Grid: titular grande arriba, tres columnas de noticias en el centro y un pie de página."
+  - title: "Galería fotográfica"
+    description: "Crea una galería con grid-template-columns: repeat(3, 1fr) donde algunas fotos ocupan dos columnas (grid-column: span 2)."
+checklist:
+  - "Sé activar Grid con display: grid"
+  - "Puedo definir columnas con repeat() y la unidad fr"
+  - "Sé posicionar un ítem en una celda concreta con grid-column y grid-row"
+  - "Entiendo cuándo usar Grid (bidimensional) y cuándo Flexbox (unidimensional)"
+  - "Sé usar gap para añadir separación entre filas y columnas"
+commonErrors:
+  - "Olvidar que fr distribuye el espacio disponible, no el espacio total"
+  - "Usar grid-column en el contenedor en lugar de en los ítems hijos"
+  - "Confundir grid-column: 1 / 3 (de línea 1 a línea 3) con grid-column: span 2 (ocupa 2 columnas)"
+  - "Intentar replicar un layout bidimensional complejo con Flexbox cuando Grid es la herramienta correcta"
 ---
 
 # Sesión 11 - Introducción a CSS Grid

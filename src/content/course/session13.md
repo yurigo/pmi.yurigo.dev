@@ -3,6 +3,30 @@ title: "Sesión 13 - CSS Positioning"
 section: "CSS"
 order: 13
 description: "Posicionamiento CSS: static, relative, absolute, fixed y sticky"
+duration: 2
+objectives:
+  - "Entender el flujo normal del documento y cómo lo alteran los distintos valores de position"
+  - "Usar position: relative para desplazamientos sin sacar el elemento del flujo"
+  - "Usar position: absolute para posicionar elementos respecto a su ancestro posicionado"
+  - "Aplicar position: fixed para elementos que se mantienen fijos durante el scroll"
+  - "Implementar position: sticky para efectos de header que se pegan al scrollear"
+  - "Controlar el apilamiento de capas con z-index"
+exercises:
+  - title: "Badge de notificación"
+    description: "Crea un componente de tarjeta con un badge numérico en la esquina superior derecha usando position: relative en la tarjeta y position: absolute en el badge."
+  - title: "Header sticky"
+    description: "Implementa un header con position: sticky que permanezca en la parte superior de la pantalla y cambie de apariencia al hacer scroll (con un poco de JavaScript o :has())."
+checklist:
+  - "Conozco los cinco valores de position: static, relative, absolute, fixed y sticky"
+  - "Entiendo que absolute se posiciona respecto al ancestro con position distinto de static"
+  - "Sé usar top, right, bottom y left para desplazar elementos posicionados"
+  - "Puedo controlar el orden de apilamiento con z-index"
+  - "Entiendo la diferencia entre fixed (relativo al viewport) y sticky (relativo al scroll)"
+commonErrors:
+  - "Usar position: absolute sin que el padre tenga position: relative (se posiciona respecto al <html>)"
+  - "Olvidar añadir z-index cuando los elementos se solapan y el orden no es el esperado"
+  - "Pensar que position: sticky funciona si el padre tiene overflow: hidden o overflow: auto"
+  - "Usar top/left en un elemento con position: static (no tiene efecto)"
 ---
 
 # Sesión 13 - CSS Positioning

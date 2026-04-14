@@ -3,6 +3,30 @@ title: "Sesión 16 - Git y GitHub"
 section: "Git"
 order: 16
 description: "Control de versiones con Git y colaboración en GitHub"
+duration: 2
+objectives:
+  - "Entender qué es el control de versiones y por qué es esencial en el desarrollo"
+  - "Inicializar un repositorio y hacer commits con git init, git add y git commit"
+  - "Trabajar con ramas: git branch, git checkout y git merge"
+  - "Publicar un repositorio en GitHub y sincronizar con git push y git pull"
+  - "Colaborar mediante pull requests en GitHub"
+exercises:
+  - title: "Primer repositorio"
+    description: "Crea un repositorio local con git init, añade los archivos de una sesión anterior, realiza al menos tres commits con mensajes descriptivos y publícalo en GitHub."
+  - title: "Flujo de ramas"
+    description: "Crea una rama feature/nueva-seccion, añade contenido nuevo, haz un commit y fusiona la rama con main mediante un pull request en GitHub."
+checklist:
+  - "Sé inicializar un repositorio con git init"
+  - "Puedo añadir archivos al stage con git add y confirmar cambios con git commit -m"
+  - "Sé ver el historial de commits con git log"
+  - "Puedo crear ramas con git branch y cambiar entre ellas con git checkout"
+  - "Sé publicar un repositorio en GitHub con git remote add y git push"
+  - "Entiendo el flujo básico: add → commit → push"
+commonErrors:
+  - "Hacer git add . sin revisar qué archivos se van a añadir (incluye archivos no deseados)"
+  - "Olvidar hacer git pull antes de git push cuando el repositorio remoto tiene cambios"
+  - "Escribir mensajes de commit poco descriptivos como 'cambios' o 'fix'"
+  - "Subir archivos sensibles (.env, contraseñas) al repositorio sin un .gitignore adecuado"
 ---
 
 # Sesión 16 - Git y GitHub

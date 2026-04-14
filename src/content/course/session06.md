@@ -3,6 +3,29 @@ title: "Sesión 06 - CSS Box Model y Reset CSS"
 section: "CSS"
 order: 6
 description: "CSS Reset, box-sizing y el modelo de caja"
+duration: 2
+objectives:
+  - "Comprender el modelo de caja CSS: content, padding, border y margin"
+  - "Aplicar box-sizing: border-box para un cálculo de tamaños más predecible"
+  - "Entender por qué se usa un CSS Reset y cómo aplicarlo"
+  - "Usar las propiedades shorthand de margin y padding correctamente"
+  - "Depurar el modelo de caja con las DevTools del navegador"
+exercises:
+  - title: "Inspeccionar cajas"
+    description: "Abre cualquier web en el navegador, activa las DevTools y usa el panel 'Elements' para identificar el padding, border y margin de al menos 5 elementos diferentes."
+  - title: "Layout con box model"
+    description: "Crea un contenedor con tres tarjetas internas. Aplica padding interno a cada tarjeta, borde visible y margen entre ellas, todo con box-sizing: border-box."
+checklist:
+  - "Entiendo las cuatro capas del modelo de caja: content, padding, border, margin"
+  - "Sé la diferencia entre box-sizing: content-box y box-sizing: border-box"
+  - "Puedo aplicar márgenes y paddings con la sintaxis shorthand (arriba derecha abajo izquierda)"
+  - "Sé incluir un CSS Reset al inicio de mi hoja de estilos"
+  - "Uso las DevTools para inspeccionar el modelo de caja de cualquier elemento"
+commonErrors:
+  - "No aplicar box-sizing: border-box y luego sorprenderse de que los elementos 'no caben'"
+  - "Confundir margin: 10px 20px (arriba-abajo / izquierda-derecha) con margin: 10px 20px 10px 20px"
+  - "No resetear los márgenes y paddings por defecto del navegador"
+  - "Añadir borde y no contar con su grosor al calcular el tamaño total del elemento"
 ---
 
 # Sesión 06 - CSS Box Model y Reset CSS

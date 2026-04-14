@@ -3,6 +3,31 @@ title: "Sesión 02 - HTML Avanzado"
 section: "HTML"
 order: 2
 description: "Imágenes, listas, tablas, multimedia y enlaces"
+duration: 2
+objectives:
+  - "Insertar imágenes con la etiqueta <img> usando atributos src y alt correctamente"
+  - "Crear listas ordenadas y desordenadas con <ol>, <ul> y <li>"
+  - "Estructurar datos tabulares con <table>, <thead>, <tbody> y <tr>"
+  - "Añadir audio y vídeo a una página con las etiquetas <audio> y <video>"
+  - "Utilizar enlaces internos, externos y anclas con <a>"
+exercises:
+  - title: "Galería de imágenes"
+    description: "Crea una página HTML con al menos 5 imágenes, cada una con un atributo alt descriptivo y un pie de foto."
+  - title: "Tabla de horarios"
+    description: "Construye una tabla que represente el horario semanal de clase con cabeceras de columna (días) y fila (horas)."
+  - title: "Página de receta"
+    description: "Crea una página con una receta de cocina: ingredientes en lista no ordenada, pasos en lista ordenada y una imagen del plato."
+checklist:
+  - "Sé insertar imágenes con src y alt correctos"
+  - "Puedo crear listas ordenadas y no ordenadas"
+  - "Sé construir una tabla HTML básica con cabeceras"
+  - "Puedo añadir un vídeo o audio con controles a una página"
+  - "Sé crear enlaces a otras páginas y a secciones dentro de la misma página"
+commonErrors:
+  - "Olvidar el atributo alt en las imágenes (afecta a la accesibilidad y el SEO)"
+  - "Usar rutas absolutas del sistema de archivos (C:/...) en lugar de rutas relativas"
+  - "Confundir <ul> (sin orden) con <ol> (con orden numérico)"
+  - "No cerrar las etiquetas de tabla correctamente (<td>, <tr>, <tbody>)"
 ---
 
 # Sesión 02 - HTML Avanzado
