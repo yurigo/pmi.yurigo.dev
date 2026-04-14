@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'course'>;
+}
+
+const { entry } = Astro.props;
+---
+<nav aria-label="Breadcrumb" class="mb-4 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 flex-wrap">
+  <a href="/" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Inicio</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+  </svg>
+  <a href="/course" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">{entry.data.section}</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+  </svg>
+  <span class="text-gray-700 dark:text-gray-300 font-medium truncate">{entry.data.title}</span>
+</nav>

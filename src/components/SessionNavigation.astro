@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entries: CollectionEntry<'course'>[];
+  current: CollectionEntry<'course'>;
+}
+
+const { entries, current } = Astro.props;
+const idx = entries.findIndex(e => e.slug === current.slug);
+const prev = idx > 0 ? entries[idx - 1] : null;
+const next = idx < entries.length - 1 ? entries[idx + 1] : null;
+---
+<nav
+  aria-label="Navegación de sesiones"
+  class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700"
+>
+  <!-- Progress & index row -->
+  <div class="flex items-center justify-between mb-4 text-xs text-gray-500 dark:text-gray-400">
+    <a
+      href="/course"
+      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300 font-medium"
+      aria-label="Volver al índice del curso"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h10M4 18h16"/>
+      </svg>
+      Índice
+    </a>
+    <span aria-label={`Sesión ${idx + 1} de ${entries.length}`}>
+      Sesión {idx + 1} de {entries.length}
+    </span>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="h-1 w-full rounded-full bg-gray-100 dark:bg-gray-800 mb-5" role="progressbar" aria-valuenow={idx + 1} aria-valuemin={1} aria-valuemax={entries.length}>
+    <div
+      class="h-1 rounded-full bg-indigo-500 transition-all"
+      style={`width: ${Math.round(((idx + 1) / entries.length) * 100)}%`}
+    />
+  </div>
+
+  <!-- Prev / Next buttons -->
+  <div class="flex gap-3 flex-wrap sm:flex-nowrap">
+    {prev ? (
+      <a
+        href={`/course/${prev.slug}`}
+        class="flex-1 flex items-center gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all group min-w-0"
+        aria-label={`Ir a la sesión anterior: ${prev.data.title}`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-gray-400 group-hover:text-indigo-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        <div class="min-w-0">
+          <div class="text-xs text-gray-400 dark:text-gray-500 mb-0.5">Anterior</div>
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">{prev.data.title}</div>
+        </div>
+      </a>
+    ) : (
+      <div class="flex-1" />
+    )}
+
+    {next ? (
+      <a
+        href={`/course/${next.slug}`}
+        class="flex-1 flex items-center justify-end gap-3 p-4 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all group min-w-0 text-right"
+        aria-label={`Ir a la sesión siguiente: ${next.data.title}`}
+      >
+        <div class="min-w-0">
+          <div class="text-xs text-gray-400 dark:text-gray-500 mb-0.5">Siguiente</div>
+          <div class="text-sm font-medium text-gray-700 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 truncate transition-colors">{next.data.title}</div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-gray-400 group-hover:text-indigo-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    ) : null}
+  </div>
+</nav>
