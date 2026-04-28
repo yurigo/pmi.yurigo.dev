@@ -39,6 +39,7 @@ En esta sesión se ha repasado brevemente lo trabajado en la sesión 18 y se ha 
 El ejercicio práctico de la sesión fue construir un **temporizador de cuenta atrás**, que se encuentra en la carpeta [`example/temporizador/`](./example/temporizador/). Para resolverlo se usó `document.querySelector`, una función helper `$`, `parseInt`, `Math.floor` y el patrón de `setTimeout` recursivo.
 
 Los dos ejemplos de la sesión se encuentran en:
+
 - [`example/session19/`](./example/session19/) — ejemplo principal con `createElement`, `innerHTML` y `setTimeout`
 - [`example/temporizador/`](./example/temporizador/) — temporizador de cuenta atrás
 
@@ -48,23 +49,23 @@ Los dos ejemplos de la sesión se encuentran en:
 
 Una vez seleccionado un elemento del DOM, podemos leer o modificar su contenido con tres propiedades:
 
-| Propiedad | Lee / Escribe | ¿Interpreta HTML? | Notas |
-| --- | --- | --- | --- |
-| `textContent` | texto plano | ❌ No | Incluye el texto de nodos ocultos (con CSS `display:none`) |
-| `innerText` | texto visible | ❌ No | Solo el texto visible; tiene en cuenta el CSS |
-| `innerHTML` | HTML como string | ✅ Sí | Permite insertar etiquetas HTML directamente |
+| Propiedad     | Lee / Escribe    | ¿Interpreta HTML? | Notas                                                      |
+| ------------- | ---------------- | ----------------- | ---------------------------------------------------------- |
+| `textContent` | texto plano      | ❌ No             | Incluye el texto de nodos ocultos (con CSS `display:none`) |
+| `innerText`   | texto visible    | ❌ No             | Solo el texto visible; tiene en cuenta el CSS              |
+| `innerHTML`   | HTML como string | ✅ Sí             | Permite insertar etiquetas HTML directamente               |
 
 ```js
 const titulo = document.getElementById("titulo");
 
 // Leer el contenido actual
 console.log(titulo.textContent); // "Hello World"
-console.log(titulo.innerText);   // "Hello World"
-console.log(titulo.innerHTML);   // "Hello World"
+console.log(titulo.innerText); // "Hello World"
+console.log(titulo.innerHTML); // "Hello World"
 
 // Escribir texto plano
 titulo.textContent = "Nuevo título";
-titulo.innerText   = "Nuevo título";
+titulo.innerText = "Nuevo título";
 
 // Escribir HTML
 titulo.innerHTML = `<span class="destacado">Nuevo título</span>`;
@@ -119,7 +120,7 @@ const cuadraditos = [];
 
 function handleClick(evento) {
   cuadraditos.push(elinput.value); // añadimos el valor al array
-  pintame(cuadraditos);             // re-renderizamos la lista completa
+  pintame(cuadraditos); // re-renderizamos la lista completa
 }
 
 function pintame(parametro1) {
@@ -149,25 +150,26 @@ La alternativa a `innerHTML` es crear los elementos de forma **programática** c
 function handleClickExtra(evento) {
   const nuevoElementoHtml = document.createElement("div"); // 1. Crear el elemento
 
-  nuevoElementoHtml.classList.add("a");                     // 2. Modificar propiedades
+  nuevoElementoHtml.classList.add("a"); // 2. Modificar propiedades
   nuevoElementoHtml.classList.add("b");
-  nuevoElementoHtml.textContent = elinput.value;            // 3. Añadir contenido
+  nuevoElementoHtml.textContent = elinput.value; // 3. Añadir contenido
 
-  cuadrados2.appendChild(nuevoElementoHtml);                // 4. Insertar en el DOM
+  cuadrados2.appendChild(nuevoElementoHtml); // 4. Insertar en el DOM
 }
 ```
 
 Los pasos habituales son:
+
 1. **Crear** el elemento con `document.createElement("etiqueta")`
 2. **Configurarlo**: añadir clases, atributos, contenido…
 3. **Insertarlo** en el DOM con `appendChild(nuevoElemento)` (o `prepend`, `insertBefore`, etc.)
 
-| Método | Descripción |
-| --- | --- |
+| Método                     | Descripción                               |
+| -------------------------- | ----------------------------------------- |
 | `parent.appendChild(hijo)` | Añade `hijo` como último hijo de `parent` |
-| `parent.prepend(hijo)` | Añade `hijo` como primer hijo de `parent` |
-| `parent.removeChild(hijo)` | Elimina `hijo` de `parent` |
-| `elemento.remove()` | Elimina el propio elemento del DOM |
+| `parent.prepend(hijo)`     | Añade `hijo` como primer hijo de `parent` |
+| `parent.removeChild(hijo)` | Elimina `hijo` de `parent`                |
+| `elemento.remove()`        | Elimina el propio elemento del DOM        |
 
 ---
 
@@ -175,13 +177,13 @@ Los pasos habituales son:
 
 Ambas técnicas permiten añadir contenido al DOM pero tienen diferencias importantes:
 
-| Característica | `innerHTML` | `createElement` + `appendChild` |
-| --- | --- | --- |
-| Código | Más conciso | Más verboso |
-| Rendimiento (muchos elementos) | Reconstruye todo el DOM | Solo añade el nuevo nodo |
-| Seguridad | ⚠️ Riesgo de XSS con datos externos | ✅ No interpreta HTML |
-| Eventos existentes | ❌ Los destruye al reescribir | ✅ Los conserva |
-| Uso recomendado | Renderizado completo de listas | Añadir elementos uno a uno |
+| Característica                 | `innerHTML`                         | `createElement` + `appendChild` |
+| ------------------------------ | ----------------------------------- | ------------------------------- |
+| Código                         | Más conciso                         | Más verboso                     |
+| Rendimiento (muchos elementos) | Reconstruye todo el DOM             | Solo añade el nuevo nodo        |
+| Seguridad                      | ⚠️ Riesgo de XSS con datos externos | ✅ No interpreta HTML           |
+| Eventos existentes             | ❌ Los destruye al reescribir       | ✅ Los conserva                 |
+| Uso recomendado                | Renderizado completo de listas      | Añadir elementos uno a uno      |
 
 > [!IMPORTANT]
 > Si usas `innerHTML = "..."` para reescribir un contenedor, **todos los event listeners** que hubieran sido asignados a sus elementos hijos se pierden. Con `createElement` + `appendChild` esto no ocurre porque los nodos ya existentes no se tocan.
@@ -240,10 +242,10 @@ Esto crea un bucle asíncrono: la función se ejecuta, realiza su trabajo y vuel
 `document.querySelector` es el selector moderno del DOM: acepta **cualquier selector CSS** y devuelve el **primer elemento** que coincide (o `null` si no hay ninguno).
 
 ```js
-const boton  = document.querySelector("#empezar");     // por id
-const titulo = document.querySelector("h1");           // por etiqueta
-const activo = document.querySelector(".active");      // por clase
-const span   = document.querySelector("#crono > span"); // selector anidado
+const boton = document.querySelector("#empezar"); // por id
+const titulo = document.querySelector("h1"); // por etiqueta
+const activo = document.querySelector(".active"); // por clase
+const span = document.querySelector("#crono > span"); // selector anidado
 ```
 
 En el ejemplo de la sesión se definió una pequeña función helper para abreviar la llamada:
@@ -258,11 +260,11 @@ const inputMinutos = $("#minutos");
 const inputSegundos = $("#segundos");
 ```
 
-| Método | Devuelve | Selector |
-| --- | --- | --- |
-| `getElementById("id")` | Elemento o `null` | Solo por id (sin `#`) |
-| `querySelector("selector")` | Primer elemento o `null` | Cualquier selector CSS |
-| `querySelectorAll("selector")` | `NodeList` (todos) | Cualquier selector CSS |
+| Método                         | Devuelve                 | Selector               |
+| ------------------------------ | ------------------------ | ---------------------- |
+| `getElementById("id")`         | Elemento o `null`        | Solo por id (sin `#`)  |
+| `querySelector("selector")`    | Primer elemento o `null` | Cualquier selector CSS |
+| `querySelectorAll("selector")` | `NodeList` (todos)       | Cualquier selector CSS |
 
 > [!TIP]
 > `querySelector` es más flexible que `getElementById`. Úsalo cuando necesites seleccionar por clase, atributo, pseudo-clase o relaciones entre elementos. Para seleccionar simplemente por `id`, ambos son equivalentes.
@@ -275,13 +277,13 @@ Como `.value` de un input siempre devuelve un string, es necesario convertirlo a
 
 ```js
 const minutos = inputMinutos.value; // "05" (string)
-const mNum    = parseInt(minutos);  // 5   (number)
+const mNum = parseInt(minutos); // 5   (number)
 ```
 
 Sin la conversión, la suma de strings produce **concatenación** en lugar de suma numérica:
 
 ```js
-console.log("2" + "3");         // "23" (concatenación ❌)
+console.log("2" + "3"); // "23" (concatenación ❌)
 console.log(parseInt("2") + parseInt("3")); // 5  (suma ✅)
 ```
 
@@ -292,7 +294,7 @@ console.log(parseInt("2") + parseInt("3")); // 5  (suma ✅)
 
 ```js
 parseInt("10", 10); // 10 en base 10 → 10
-parseInt("10", 2);  // "10" en base 2 → 2
+parseInt("10", 2); // "10" en base 2 → 2
 ```
 
 ---
@@ -311,7 +313,7 @@ En el temporizador se usa para convertir los segundos totales en minutos y segun
 
 ```js
 let minutos = Math.floor(cuentaAtras / 60); // parte entera de la división
-let segundos = cuentaAtras % 60;             // resto de la división
+let segundos = cuentaAtras % 60; // resto de la división
 ```
 
 > [!NOTE]
@@ -334,8 +336,9 @@ if (segundos < 10) {
 
 > [!TIP]
 > La forma moderna de hacer padding de strings es con el método `.padStart()`:
+>
 > ```js
-> minutos  = String(minutos).padStart(2, "0");  // "05"
+> minutos = String(minutos).padStart(2, "0"); // "05"
 > segundos = String(segundos).padStart(2, "0"); // "09"
 > ```
 
