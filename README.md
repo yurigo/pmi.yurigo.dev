@@ -19,22 +19,52 @@ npm run preview  # preview the production build
 
 ## Content Organization
 
-Course content lives in `src/content/course/` as Markdown files. Each file has frontmatter:
+Course content lives in `src/content/course/` as Markdown files.
+
+### Frontmatter Guide (new sessions)
+
+Astro schema requirements in `src/content/config.ts`:
+- Required: `title`, `section`, `order`
+- Optional (schema): `description`, `duration`, `objectives`, `exercises`, `checklist`, `commonErrors`
+
+Project convention (recommended for all new sessions):
+- Use all 9 fields so every session has consistent metadata and teaching structure.
 
 ```md
 ---
-title: "Sesión 01 - Introducción a Web"
-section: "HTML"
-order: 1
-description: "Optional short description"
+title: "Sesion NN - Tema"
+section: "HTML | CSS | JavaScript"
+order: NN
+description: "Resumen corto de la sesion"
+duration: 2
+objectives:
+    - "Objetivo 1"
+    - "Objetivo 2"
+exercises:
+    - title: "Ejercicio 1"
+        description: "Descripcion breve del ejercicio"
+    - title: "Ejercicio 2"
+        description: "Descripcion breve del ejercicio"
+checklist:
+    - "Puedo hacer X"
+    - "Entiendo Y"
+commonErrors:
+    - "Error frecuente 1"
+    - "Error frecuente 2"
 ---
 ```
 
+Rules of thumb:
+- `order` must be numeric and unique.
+- Keep `title` aligned with file number (example: `session19.md` -> `order: 19`).
+- Keep `section` consistent (`HTML`, `CSS`, `JavaScript`) to preserve sidebar grouping.
+- Use concise and actionable items in `objectives`, `checklist`, and `commonErrors`.
+
 ### Adding a New Lesson
 
-1. Create a new file `src/content/course/sessionNN.md`
-2. Add the required frontmatter fields: `title`, `section`, `order`
-3. Write the content in Markdown below the `---` closing delimiter
+1. Create `src/content/course/sessionNN.md`
+2. Paste the template above and complete all fields
+3. Write the lesson body below the closing `---`
 
 ### Controlling Navigation Order
 
