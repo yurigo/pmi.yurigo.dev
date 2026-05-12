@@ -138,7 +138,7 @@ function pintame(parametro1) {
 Cada vez que se llama a `pintame`, se recorre el array completo y se reconstruye el HTML entero del contenedor. Es una técnica sencilla y muy usada en frameworks modernos (React, Vue…).
 
 > [!TIP]
-> En lugar de concatenar strings con `+` dentro del `forEach`, puedes usar una variable acumuladora y template literals. Otra alternativa más moderna es `parametro1.map(el => \`<div>${el}</div>\`).join("")`.
+> En lugar de concatenar strings con `+` dentro del `forEach`, puedes usar una variable acumuladora y template literals. Otra alternativa más moderna es `parametro1.map(el => ``<div>${el}</div>\``).join("")`.
 
 ---
 
