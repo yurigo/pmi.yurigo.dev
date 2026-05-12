@@ -28,6 +28,7 @@ En esta sesión se ha practicado y consolidado lo aprendido en la sesión 19 con
 Al final de la sesión se integró la librería de confeti **[confettijs](https://confettijs.org/)** para celebrar cuando la cuenta llega a cero, lo que sirvió de excusa para explicar qué es una **librería de terceros** y cómo cargarla desde un **CDN**.
 
 Los dos ejemplos de la sesión se encuentran en:
+
 - [`cuentaAtras/`](./cuentaAtras/) — cuenta atrás hasta una fecha, sin estilar
 - [`cuentaAtrasConConfetti/`](./cuentaAtrasConConfetti/) — misma cuenta atrás con efecto de confeti al llegar a cero
 
@@ -60,7 +61,7 @@ Un **timestamp** es el número de milisegundos transcurridos desde el 1 de enero
 const ahora = new Date();
 const miFiesta = new Date("2026-11-30");
 
-const timestampAhora  = ahora.getTime();    // p.ej. 1746000000000
+const timestampAhora = ahora.getTime(); // p.ej. 1746000000000
 const timestampFiesta = miFiesta.getTime(); // p.ej. 1764460800000
 
 const diferencia = timestampFiesta - timestampAhora; // milisegundos que quedan
@@ -107,11 +108,11 @@ function calculaLosSegundos() {
 
 Las etiquetas más comunes de JSDoc son:
 
-| Etiqueta | Significado |
-| --- | --- |
+| Etiqueta               | Significado                      |
+| ---------------------- | -------------------------------- |
 | `@param {tipo} nombre` | Describe un parámetro de entrada |
-| `@returns {tipo}` | Describe el valor de retorno |
-| `@type {tipo}` | Declara el tipo de una variable |
+| `@returns {tipo}`      | Describe el valor de retorno     |
+| `@type {tipo}`         | Declara el tipo de una variable  |
 
 > [!TIP]
 > Aunque JavaScript no tiene tipado estático, añadir JSDoc mejora la legibilidad del código y permite que editores como VSCode ofrezcan autocompletado y detección de errores sin necesidad de TypeScript.
@@ -125,13 +126,13 @@ El truco clave es aplicar sucesivamente `Math.floor` (división entera) y `%` (m
 ```js
 function conversor(segundos) {
   let m = Math.floor(segundos / 60); // minutos totales
-  const s = segundos % 60;           // segundos sobrantes
+  const s = segundos % 60; // segundos sobrantes
 
-  let h = Math.floor(m / 60);        // horas totales
-  m = m % 60;                        // minutos sobrantes
+  let h = Math.floor(m / 60); // horas totales
+  m = m % 60; // minutos sobrantes
 
-  const d = Math.floor(h / 24);      // días totales
-  h = h % 24;                        // horas sobrantes
+  const d = Math.floor(h / 24); // días totales
+  h = h % 24; // horas sobrantes
 
   return {
     dias: d,
@@ -171,9 +172,9 @@ Para acceder a sus propiedades se usa la notación de punto:
 ```js
 const resultado = conversor(segundosRestantes);
 
-console.log(resultado.dias);     // número de días
-console.log(resultado.horas);    // número de horas
-console.log(resultado.minutos);  // número de minutos
+console.log(resultado.dias); // número de días
+console.log(resultado.horas); // número de horas
+console.log(resultado.minutos); // número de minutos
 console.log(resultado.segundos); // número de segundos
 ```
 
@@ -205,14 +206,14 @@ La función `printar` usa `innerText` para actualizar cada celda del DOM:
 ```js
 function printar(valor) {
   const segundos = document.getElementById("segundos");
-  const minutos  = document.getElementById("minutos");
-  const horas    = document.getElementById("horas");
-  const dias     = document.getElementById("dias");
+  const minutos = document.getElementById("minutos");
+  const horas = document.getElementById("horas");
+  const dias = document.getElementById("dias");
 
   segundos.innerText = valor.segundos;
-  minutos.innerText  = valor.minutos;
-  horas.innerText    = valor.horas;
-  dias.innerText     = valor.dias;
+  minutos.innerText = valor.minutos;
+  horas.innerText = valor.horas;
+  dias.innerText = valor.dias;
 }
 ```
 
@@ -224,15 +225,15 @@ Una **librería de terceros** es código JavaScript escrito por otra persona (o 
 
 Hay dos formas habituales de incluir una librería:
 
-| Método | Descripción |
-| --- | --- |
+| Método  | Descripción                                                           |
+| ------- | --------------------------------------------------------------------- |
 | **CDN** | Enlazar el archivo desde un servidor externo con `<script src="URL">` |
-| **npm** | Instalarla localmente con el gestor de paquetes Node.js |
+| **npm** | Instalarla localmente con el gestor de paquetes Node.js               |
 
 En esta sesión se usó el método **CDN**, que es el más sencillo para proyectos pequeños sin proceso de compilación.
 
 > [!NOTE]
-> **CDN** son las siglas de *Content Delivery Network* (Red de Distribución de Contenidos). Son servidores distribuidos por todo el mundo que sirven archivos estáticos (JS, CSS, imágenes) con alta disponibilidad y baja latencia.
+> **CDN** son las siglas de _Content Delivery Network_ (Red de Distribución de Contenidos). Son servidores distribuidos por todo el mundo que sirven archivos estáticos (JS, CSS, imágenes) con alta disponibilidad y baja latencia.
 
 ---
 
@@ -260,18 +261,22 @@ confetti();
 // Llamada con opciones
 confetti({
   position: { x: 0, y: 0 }, // origen en píxeles desde la esquina superior izquierda
-  count: 100,                // número de partículas
-  size: 1,                   // tamaño de las partículas
-  velocity: 200,             // velocidad inicial
-  fade: false,               // las partículas caen (true = desvanecen)
+  count: 100, // número de partículas
+  size: 1, // tamaño de las partículas
+  velocity: 200, // velocidad inicial
+  fade: false, // las partículas caen (true = desvanecen)
 });
 ```
 
 En el ejemplo se lanzaron dos ráfagas simultáneas (desde las dos esquinas superiores) cuando la cuenta llegó a cero:
 
 ```js
-confetti({ position: { x: 0,                y: 0 }, count: 100, velocity: 200 });
-confetti({ position: { x: window.innerWidth, y: 0 }, count: 100, velocity: 200 });
+confetti({ position: { x: 0, y: 0 }, count: 100, velocity: 200 });
+confetti({
+  position: { x: window.innerWidth, y: 0 },
+  count: 100,
+  velocity: 200,
+});
 ```
 
 > [!TIP]
@@ -303,8 +308,12 @@ function handleTimeout() {
   const valor = conversor(s);
 
   if (valor.isMyBirthday) {
-    confetti({ position: { x: 0,                y: 0 }, count: 100, velocity: 200 });
-    confetti({ position: { x: window.innerWidth, y: 0 }, count: 100, velocity: 200 });
+    confetti({ position: { x: 0, y: 0 }, count: 100, velocity: 200 });
+    confetti({
+      position: { x: window.innerWidth, y: 0 },
+      count: 100,
+      velocity: 200,
+    });
   }
 
   printar(valor);
@@ -324,20 +333,20 @@ Para no tener que esperar meses hasta el cumpleaños y poder probar el efecto de
 ```js
 // En lugar de: const EL_DIA_DE_MI_CUMPLE = new Date("2026-11-30");
 
-let EL_DIA_DE_MI_CUMPLE = new Date();                              // fecha y hora actuales
+let EL_DIA_DE_MI_CUMPLE = new Date(); // fecha y hora actuales
 EL_DIA_DE_MI_CUMPLE.setSeconds(EL_DIA_DE_MI_CUMPLE.getSeconds() + 2); // +2 segundos
 ```
 
 De esta forma, la cuenta atrás llegará a cero en 2 segundos al abrir la página.
 
-| Método de `Date` | Descripción |
-| --- | --- |
-| `getSeconds()` | Devuelve los segundos (0-59) de la fecha |
-| `setSeconds(n)` | Modifica los segundos de la fecha (puede "desbordar" y cambiar minutos/horas) |
-| `getTime()` | Devuelve el timestamp en milisegundos |
-| `getFullYear()` | Devuelve el año de cuatro dígitos |
-| `getMonth()` | Devuelve el mes (¡0-11!, enero = 0) |
-| `getDate()` | Devuelve el día del mes (1-31) |
+| Método de `Date` | Descripción                                                                   |
+| ---------------- | ----------------------------------------------------------------------------- |
+| `getSeconds()`   | Devuelve los segundos (0-59) de la fecha                                      |
+| `setSeconds(n)`  | Modifica los segundos de la fecha (puede "desbordar" y cambiar minutos/horas) |
+| `getTime()`      | Devuelve el timestamp en milisegundos                                         |
+| `getFullYear()`  | Devuelve el año de cuatro dígitos                                             |
+| `getMonth()`     | Devuelve el mes (¡0-11!, enero = 0)                                           |
+| `getDate()`      | Devuelve el día del mes (1-31)                                                |
 
 > [!WARNING]
 > En JavaScript, `Date.getMonth()` devuelve valores del **0 al 11** (enero = 0, diciembre = 11). Es un error muy frecuente que no se puede olvidar.
