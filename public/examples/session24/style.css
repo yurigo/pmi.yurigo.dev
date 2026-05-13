@@ -1,0 +1,11 @@
+.card {
+  width: min-content;
+  background-color: salmon;
+  overflow: hidden;
+  height: 55px;
+  padding: 1em;
+}
+
+.expanded {
+  height: auto;
+}
